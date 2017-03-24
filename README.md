@@ -8,7 +8,9 @@
 
 说！说！说！脱口而出！这才是真正的成功！
 
-<iframe height="36" width="260" src="http://www.ximalaya.com/swf/sound/orange.swf?id=12997569&auto=true" frameborder=0 allowfullscreen></iframe>
+<audio preload="none" style="width: 100%;" controls="controls">
+<source type="audio/mpeg" src="/recording/00_introduction.mp3" />
+</audio>
 <center>
 <img src="/images/1.jpg" /><br />
 <img src="/images/2.jpg" /><br />
