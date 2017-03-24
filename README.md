@@ -11,6 +11,7 @@
 <audio preload="none" style="width: 100%;" controls="controls">
 <source type="audio/mpeg" src="/recording/00_introduction.mp3" />
 </audio>
+
 <center>
 <img src="/images/1.jpg" /><br />
 <img src="/images/2.jpg" /><br />
