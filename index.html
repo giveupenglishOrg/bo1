@@ -1,538 +1,3073 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blurt Out 1 - The LYCE Digitization</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="LYCE" />
+<meta name="description" content="This is part of the LYCE Digitization Project, some of them are processed as Anki Text File, in order to make your remembering and practising easy."
+ />
+<meta name="keywords" content="LYCE, English" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
-<!DOCTYPE HTML>
-<html lang="" >
-    <head>
-        <title>Introduction · GitBook</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.0.0">
-        
-        
-        
-    
-    <link rel="stylesheet" href="gitbook/style.css">
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
 
-    
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
-    
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
 
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-        
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
-
-    
-    <link rel="next" href="1.html" />
-    
-    
-
-    </head>
-    <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
-            
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
-</div>
-
-            
-                <nav role="navigation">
-                
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
 
 
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        
-    
-        <li class="chapter active" data-level="1.1" data-path="./">
-            
-                <a href="./">
-            
-                    
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" data-path="1.html">
-            
-                <a href="1.html">
-            
-                    
-                    第一部：我的誓言
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="2.html">
-            
-                <a href="2.html">
-            
-                    
-                    第二部：疯狂准备篇
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.3.1" data-path="2-1.html">
-            
-                <a href="2-1.html">
-            
-                    
-                    第一节：咬牙切齿的开始
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" data-path="2-2.html">
-            
-                <a href="2-2.html">
-            
-                    
-                    第二节：一百个超级短句
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3" data-path="2-3.html">
-            
-                <a href="2-3.html">
-            
-                    
-                    第三节：一个最疯狂，最典型的美国发音
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.4" data-path="2-4.html">
-            
-                <a href="2-4.html">
-            
-                    
-                    第四节：四星级 五星级 六星级单词全面奉献
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.5" data-path="2-5.html">
-            
-                <a href="2-5.html">
-            
-                    
-                    第五节：语法大战
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.6" data-path="2-6.html">
-            
-                <a href="2-6.html">
-            
-                    
-                    第六节：三最短文
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.7" data-path="2-7.html">
-            
-                <a href="2-7.html">
-            
-                    
-                    第七节：生活实际问题
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.8" data-path="2-8.html">
-            
-                <a href="2-8.html">
-            
-                    
-                    第八节：成语的挑战
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" >
-            
-                <span>
-            
-                    
-                    第三部：疯狂卖弄篇
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.4.1" >
-            
-                <span>
-            
-                    
-                    第一节：大段自我介绍
-            
-                </span>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.2" >
-            
-                <span>
-            
-                    
-                    第一印象是最重要的！
-            
-                </span>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.3" >
-            
-                <span>
-            
-                    
-                    第二节：卖弄你的英语和幽默感
-            
-                </span>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.4" >
-            
-                <span>
-            
-                    
-                    第三节：神奇的中文成语
-            
-                </span>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.5" >
-            
-                <span>
-            
-                    
-                    外国人会非常崇拜地听你讲解中文成语，因为它们充满了智慧！
-            
-                </span>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.6" >
-            
-                <span>
-            
-                    
-                    第四节：形容词大战！
-            
-                </span>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.7" >
-            
-                <span>
-            
-                    
-                    形容优秀、成功人的一百个形容词！出色的英语加上一流的甜言蜜语让你所向披靡
-            
-                </span>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" >
-            
-                <span>
-            
-                    
-                    第四部：疯狂实战篇
-            
-                </span>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6" >
-            
-                <span>
-            
-                    
-                    第五部：疯狂挑战篇
-            
-                </span>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7" >
-            
-                <span>
-            
-                    
-                    第六部：特级生活习惯
-            
-                </span>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Blurt Out 1 - The LYCE Digitization</h1>
+<div id="table-of-contents">
+<h2>&#30446;&#24405;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org793c6a8">脱口而出 第 1 辑</a></li>
+<li><a href="#orgc4c8986">第一部：我的誓言</a>
+<ul>
+<li><a href="#org608d987">My Pledge/Oath 我的誓言</a></li>
 </ul>
-
-
-                </nav>
-            
-        
-    </div>
-
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
-    </h1>
+</li>
+<li><a href="#orgd4358a4">第二部：疯狂准备篇</a>
+<ul>
+<li><a href="#org9a0f721">第一节：咬牙切齿的开始</a></li>
+<li><a href="#orgdfae349">第二节：一百个超级短句</a></li>
+<li><a href="#org6f7b18a">第三节：一个最疯狂，最典型的美国发音</a></li>
+<li><a href="#orge016210">第四节：四星级 五星级 六星级单词全面奉献</a></li>
+<li><a href="#org0dbe5e9">第五节：语法大战</a></li>
+<li><a href="#org0486060">第六节：三最短文</a></li>
+<li><a href="#orgba81efe">第七节：生活实际问题</a></li>
+<li><a href="#org5f130f0">第八节：成语的挑战</a></li>
+</ul>
+</li>
+<li><a href="#org5ab1f45">第三部：疯狂卖弄篇</a></li>
+<li><a href="#org15a6774">第四部：疯狂实战篇</a></li>
+<li><a href="#orgd469f74">第五部：疯狂挑战篇</a></li>
+<li><a href="#org4ca9c9d">第六部：特级生活习惯</a></li>
+</ul>
 </div>
+</div>
+<div id="outline-container-org793c6a8" class="outline-2">
+<h2 id="org793c6a8">脱口而出 第 1 辑</h2>
+<div class="outline-text-2" id="text-org793c6a8">
+<p>
+— 看懂是骗人的！听懂是不够的！说出来才是自己的！
+</p>
+<hr />
 
+<p>
+中国第一家“苦练说”和“苦练脱口而出”的有声读物！
+</p>
 
+<p>
+说！说！说！脱口而出！这才是真正的成功！
+</p>
 
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="&#x8131;&#x53E3;&#x800C;&#x51FA;-&#x7B2C;1&#x8F91;">&#x8131;&#x53E3;&#x800C;&#x51FA; &#x7B2C;1&#x8F91;</h1>
-<p>&#x2014; &#x770B;&#x61C2;&#x662F;&#x9A97;&#x4EBA;&#x7684;&#xFF01;&#x542C;&#x61C2;&#x662F;&#x4E0D;&#x591F;&#x7684;&#xFF01;&#x8BF4;&#x51FA;&#x6765;&#x624D;&#x662F;&#x81EA;&#x5DF1;&#x7684;&#xFF01;</p>
-<hr>
-<p>&#x4E2D;&#x56FD;&#x7B2C;&#x4E00;&#x5BB6;&#x201C;&#x82E6;&#x7EC3;&#x8BF4;&#x201D;&#x548C;&#x201C;&#x82E6;&#x7EC3;&#x8131;&#x53E3;&#x800C;&#x51FA;&#x201D;&#x7684;&#x6709;&#x58F0;&#x8BFB;&#x7269;&#xFF01;</p>
-<p>&#x8BF4;&#xFF01;&#x8BF4;&#xFF01;&#x8BF4;&#xFF01;&#x8131;&#x53E3;&#x800C;&#x51FA;&#xFF01;&#x8FD9;&#x624D;&#x662F;&#x771F;&#x6B63;&#x7684;&#x6210;&#x529F;&#xFF01;</p>
 <audio preload="none" style="width: 100%;" controls="controls">
-<source type="audio/mpeg" src="/recording/00_introduction.mp3">
+<source type="audio/mpeg" src="./recording/00_introduction.mp3" />
 </audio>
-
 <center>
-<img src="images/1.jpg"><br>
-<img src="images/2.jpg"><br>
-<img src="images/ly.jpg"><br>
+<img src="./images/1.jpg" /><br />
+<img src="./images/2.jpg" /><br />
+<img src="./images/ly.jpg" /><br />
 </center>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+</div>
 </div>
 
-                        </div>
-                    </div>
-                
-            </div>
+<div id="outline-container-orgc4c8986" class="outline-2">
+<h2 id="orgc4c8986">第一部：我的誓言</h2>
+<div class="outline-text-2" id="text-orgc4c8986">
+</div>
+<div id="outline-container-org608d987" class="outline-3">
+<h3 id="org608d987">My Pledge/Oath 我的誓言</h3>
+<div class="outline-text-3" id="text-org608d987">
+<audio preload="none" style="width: 100%;" controls="controls">
+<source type="audio/mpeg" src="./recording/01_my_pledge.mp3" />
+</audio><br /><br />
 
-            
-                
-                
-                <a href="1.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 第一部：我的誓言">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
-    </div>
+<p>
+What's your story?
+</p>
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"第一部：我的誓言","level":"1.2","depth":1,"path":"1.md","ref":"1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["disqus","livereload"],"pluginsConfig":{"disqus":{"shortName":"lyce","useIdentifier":false},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2017-03-24T05:22:24.539Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2017-03-24T05:22:34.053Z"},"basePath":".","book":{"language":""}});
-        });
-    </script>
+<p>
+You can't speak! You can't understand! You feel bad! You feel hopeless!
+</p>
+
+<p>
+That's crazy! Cheer up!
+</p>
+
+<p>
+It's not the end of the world.
+</p>
+
+<p>
+Speaking English is a piece of cake.
+</p>
+
+<p>
+Don't look back. Enjoy losing face. Just forget about your face.
+</p>
+
+<p>
+The more mistakes you make, the more progress you make.
+</p>
+
+<p>
+Don't give up.
+</p>
+
+<p>
+Just try your best.
+</p>
+
+<p>
+Relax! Don't panic! Take it easy!
+</p>
+
+<p>
+Be patient and enjoy yourself.
+</p>
+
+<p>
+Learning English should be fun.
+</p>
+
+<p>
+Speaking good English is no big deal.
+</p>
+
+<p>
+It's worth your time and effort.
+</p>
+
+<p>
+It's an easy job. Do something about it. You have no choice. No more excuses!
+</p>
+
+<p>
+Get moving. Let's get started! Let's talk in English! You'd better do it now.
+</p>
+
+<p>
+I have every confidence in you. I want to be proud of you.
+</p>
+
+<p>
+It's my pleasure to help you anytime.
+</p>
+
+<p>
+You can count on me!
+</p>
+
+<p>
+Don't worry about it, I'm serious.
+</p>
+
+<p>
+I'll try my best to help you.
+</p>
+
+<p>
+We will make it together.
+</p>
+</div>
+</div>
 </div>
 
-        
-    <script src="gitbook/gitbook.js"></script>
-    <script src="gitbook/theme.js"></script>
-    
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
-        
-    
+<div id="outline-container-orgd4358a4" class="outline-2">
+<h2 id="orgd4358a4">第二部：疯狂准备篇</h2>
+<div class="outline-text-2" id="text-orgd4358a4">
+</div>
+<div id="outline-container-org9a0f721" class="outline-3">
+<h3 id="org9a0f721">第一节：咬牙切齿的开始</h3>
+<div class="outline-text-3" id="text-org9a0f721">
+<p>
+— 疯狂背诵一百个句型！一百个名型可以造成千上万个句子！
+</p>
+<hr />
 
-    </body>
+<div style="padding: 32px">
+<audio preload="none" style="width: 100%;" controls="controls">
+<source type="audio/mpeg" src="./recording/02_01_sentencePattern_01_20.mp3" />
+</audio><br />
+Do you like Chinese food/studying Chinese/him/movies/our city/sports/watching sports/traveling/cars/driving/chasing girls?
+</div>
+</div>
+
+<div id="outline-container-orge765bbb" class="outline-4">
+<h4 id="orge765bbb">1. I am&#x2026; 我是</h4>
+<div class="outline-text-4" id="text-orge765bbb">
+<p>
+I am an office worker. 我是上班族。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5a26fb8" class="outline-4">
+<h4 id="org5a26fb8">2. I work for&#x2026; 我在……工作</h4>
+<div class="outline-text-4" id="text-org5a26fb8">
+<p>
+I work for the government. 我在政府机关做事。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgabc32bd" class="outline-4">
+<h4 id="orgabc32bd">3. I'm happy to&#x2026; 我很高兴；我很荣幸</h4>
+<div class="outline-text-4" id="text-orgabc32bd">
+<p>
+I'm happy to meet you. 我很高兴见到你。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org15923a6" class="outline-4">
+<h4 id="org15923a6">4. I like.. 我喜欢</h4>
+<div class="outline-text-4" id="text-org15923a6">
+<p>
+I like your sense of humor. 我喜欢你的幽默感。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8ff3ee7" class="outline-4">
+<h4 id="org8ff3ee7">5. I'm glad to&#x2026; 我很高兴</h4>
+<div class="outline-text-4" id="text-org8ff3ee7">
+<p>
+I'm glad to see you again. 我很高兴再次见到你。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf1a055a" class="outline-4">
+<h4 id="orgf1a055a">6. I'll&#x2026; 我会；我将</h4>
+<div class="outline-text-4" id="text-orgf1a055a">
+<p>
+I'll call you. 我会打电话给你。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org80af039" class="outline-4">
+<h4 id="org80af039">7. I feel like&#x2026; 我想</h4>
+<div class="outline-text-4" id="text-org80af039">
+<p>
+I feel like sleeping/taking a walk. 我想睡/散步。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8a3a8ac" class="outline-4">
+<h4 id="org8a3a8ac">8. I want&#x2026; 我想要</h4>
+<div class="outline-text-4" id="text-org8a3a8ac">
+<p>
+I want something to eat. 我想吃点东西。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd803cbf" class="outline-4">
+<h4 id="orgd803cbf">9. I need&#x2026; 我需要</h4>
+<div class="outline-text-4" id="text-orgd803cbf">
+<p>
+I need your help. 我需要你的帮助。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org045dd1a" class="outline-4">
+<h4 id="org045dd1a">10. I would like to&#x2026; 我想；我愿意</h4>
+<div class="outline-text-4" id="text-org045dd1a">
+<p>
+I would like to talk to you for a minute. 我想和你谈一下。
+</p>
+
+<div style="border:1px solid #444444; padding: 7px 20px; width:100%">
+This sentence is so common!<br />
+However, it usually means you are in for a long discussion about something important.<br />
+American parents use this sentence before telling their children about sex, or warning them about the dangers of drugs!<br />
+Very serious talk follows a very light invitation.
+</div><br /><br />
+</div>
+</div>
+
+<div id="outline-container-org10b698a" class="outline-4">
+<h4 id="org10b698a">11. I have&#x2026; 我有</h4>
+<div class="outline-text-4" id="text-org10b698a">
+<p>
+I have a lot of problems. 我有很多问题。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga664792" class="outline-4">
+<h4 id="orga664792">12. I hope&#x2026; 我希望</h4>
+<div class="outline-text-4" id="text-orga664792">
+<p>
+I hope our dreams come true. 我希望我们的梦想成真。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5d9bb20" class="outline-4">
+<h4 id="org5d9bb20">13. I'm looking forward to&#x2026; 我期待；我期望</h4>
+<div class="outline-text-4" id="text-org5d9bb20">
+<p>
+I'm looking forward to seeing you. 我期望见到你。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfb1adc8" class="outline-4">
+<h4 id="orgfb1adc8">14. I'm supposed to&#x2026; 我应该</h4>
+<div class="outline-text-4" id="text-orgfb1adc8">
+<p>
+I'm supposed to go on a diet/get a raise. 我应该节食/涨工资。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge28d818" class="outline-4">
+<h4 id="orge28d818">15. I heard&#x2026; 我听说</h4>
+<div class="outline-text-4" id="text-orge28d818">
+<p>
+I heard that you're getting married. Congratulations! 听说你要结婚了，恭喜恭喜!
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga3a7b81" class="outline-4">
+<h4 id="orga3a7b81">16. I see&#x2026; 我知道</h4>
+<div class="outline-text-4" id="text-orga3a7b81">
+<p>
+I see what you mean. 我了解你的意思。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc8abc07" class="outline-4">
+<h4 id="orgc8abc07">17. I can't&#x2026; 我不能……</h4>
+<div class="outline-text-4" id="text-orgc8abc07">
+<p>
+I can't do this. 我不能这么做。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga64954a" class="outline-4">
+<h4 id="orga64954a">18. Let me&#x2026; 让我</h4>
+<div class="outline-text-4" id="text-orga64954a">
+<p>
+Let me explain why I was late. 让我解释迟到的理由。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org487919c" class="outline-4">
+<h4 id="org487919c">19. Let's&#x2026;! 让咱们……吧!</h4>
+<div class="outline-text-4" id="text-org487919c">
+<p>
+Let's have a beer or something. 咱们喝点啤酒什么的。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgde56a01" class="outline-4">
+<h4 id="orgde56a01">20. Where is&#x2026;?</h4>
+<div class="outline-text-4" id="text-orgde56a01">
+<p>
+Where is your office? 你们的办公室在哪里？
+</p>
+
+<audio preload="none" style="width: 100%;" controls="controls">
+<source type="audio/mpeg" src="./recording/02_01_sentencePattern_21_40.mp3" />
+</audio><br /><br />
+</div>
+</div>
+
+<div id="outline-container-orgb38e4c8" class="outline-4">
+<h4 id="orgb38e4c8">21. What is&#x2026;? ……是什么？</h4>
+<div class="outline-text-4" id="text-orgb38e4c8">
+<p>
+What is you plan? 你的计划是什么？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org20e9f5e" class="outline-4">
+<h4 id="org20e9f5e">22. When is&#x2026;? 什么时候……？</h4>
+<div class="outline-text-4" id="text-org20e9f5e">
+<p>
+When is the store closing? 这家店什么时候结束营业？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org27d6336" class="outline-4">
+<h4 id="org27d6336">23. Would you care to&#x2026;? 要不要……</h4>
+<div class="outline-text-4" id="text-org27d6336">
+<p>
+Would you cara to see it/sit down for a while? 你要不要看/坐一会儿呢？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga7d3951" class="outline-4">
+<h4 id="orga7d3951">24. Are you sure&#x2026;? 你肯定……吗？</h4>
+<div class="outline-text-4" id="text-orga7d3951">
+<p>
+Are you sure you can come by at nine? 你肯定你九点能来吗？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc792825" class="outline-4">
+<h4 id="orgc792825">25. Am I allowed to&#x2026;? 我可以……吗？</h4>
+<div class="outline-text-4" id="text-orgc792825">
+<p>
+Am I allowed to stay out past 10? 我可以十点过后再回家吗？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf9de5fd" class="outline-4">
+<h4 id="orgf9de5fd">26. be scheduled to&#x2026; 排定时间或日期</h4>
+<div class="outline-text-4" id="text-orgf9de5fd">
+<p>
+The meeting was scheduled for two hours, but it is not over yet. 会议原定了两个小时，不过到现在还没有结束。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3012131" class="outline-4">
+<h4 id="org3012131">27. birthday is&#x2026; 生日是在……</h4>
+<div class="outline-text-4" id="text-org3012131">
+<p>
+Tom's birthday is this week. 汤姆的生日就在这个星期。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org631ec3a" class="outline-4">
+<h4 id="org631ec3a">28. Can you&#x2026;? 能请你……吗？</h4>
+<div class="outline-text-4" id="text-org631ec3a">
+<p>
+Can you cover for me on Friday/help me/tell me how to get there? 星期五能不能请你替我个班/你能帮我吗/你能告诉我到那里怎么走吗？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb50aa34" class="outline-4">
+<h4 id="orgb50aa34">29. Could you&#x2026; 能否请你……</h4>
+<div class="outline-text-4" id="text-orgb50aa34">
+<p>
+Could you do me a big favor? 能否请你帮我个忙？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org80131e7" class="outline-4">
+<h4 id="org80131e7">30. crazy about&#x2026; 对……很着迷</h4>
+<div class="outline-text-4" id="text-org80131e7">
+<p>
+He is crazy about Crazy English. 他对疯狂英语很着迷。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2275a74" class="outline-4">
+<h4 id="org2275a74">31. Can you imagine&#x2026;? 你能想像……吗？</h4>
+<div class="outline-text-4" id="text-org2275a74">
+<p>
+Can you imagine how much he paid for that car? 你能想像他那部车付了多少钱吗？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb219b8d" class="outline-4">
+<h4 id="orgb219b8d">32. Can you believe&#x2026;? 你相信……？</h4>
+<div class="outline-text-4" id="text-orgb219b8d">
+<p>
+Can you believe that I bought a TV for $25? 你相信我用25美元买了一台电视吗？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgee73cd7" class="outline-4">
+<h4 id="orgee73cd7">33. Did you know&#x2026;? 你知道……吗？</h4>
+<div class="outline-text-4" id="text-orgee73cd7">
+<p>
+Did you know he was having an affair/cheating on his wife? 你知道他有外遇了吗/欺骗他的妻子吗？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4f6e7f8" class="outline-4">
+<h4 id="org4f6e7f8">34. Did you hear about&#x2026;? 你听说……了吗？你知道……吗？</h4>
+<div class="outline-text-4" id="text-org4f6e7f8">
+<p>
+Did you hear about the new project? 你知道那个新项目吗？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org78abc5c" class="outline-4">
+<h4 id="org78abc5c">35. Do you realize&#x2026;? 你知道……吗？</h4>
+<div class="outline-text-4" id="text-org78abc5c">
+<p>
+Do you realize that all of these shirts are half off? 你知道这些衬衫都卖半价吗？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8d6cf8d" class="outline-4">
+<h4 id="org8d6cf8d">36. Do you mind if I&#x2026;? 你介意……吗？</h4>
+<div class="outline-text-4" id="text-org8d6cf8d">
+<p>
+Do you mind if I take tomorrow off? 你介意我明天请假吗？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbb73ea9" class="outline-4">
+<h4 id="orgbb73ea9">37. enjoy&#x2026; 很喜欢……</h4>
+<div class="outline-text-4" id="text-orgbb73ea9">
+<p>
+I enjoy working with you very much. 我很喜欢和你一起工作。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgddb9d36" class="outline-4">
+<h4 id="orgddb9d36">38. ended up&#x2026; 最终是……</h4>
+<div class="outline-text-4" id="text-orgddb9d36">
+<p>
+Did you know that Stone ended up marrying his secretary? 你知道吗？石头最终和他的秘书结婚了。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6ae63e6" class="outline-4">
+<h4 id="org6ae63e6">39. get together&#x2026; 聚在一起……</h4>
+<div class="outline-text-4" id="text-org6ae63e6">
+<p>
+Let's get together for lunch. 让我们聚在一起吃顿午餐吧。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcf85305" class="outline-4">
+<h4 id="orgcf85305">40. getting&#x2026;for&#x2026; 获得……以作为……</h4>
+<div class="outline-text-4" id="text-orgcf85305">
+<p>
+I'm getting a new computer for birthday present. 我得到一台新电脑，作为我的生日礼物。
+</p>
+
+<audio preload="none" style="width: 100%;" controls="controls">
+<source type="audio/mpeg" src="./recording/02_01_sentencePattern_41_60.mp3" />
+</audio><br /><br />
+</div>
+</div>
+
+<div id="outline-container-orgbbb9f32" class="outline-4">
+<h4 id="orgbbb9f32">41. How did you do on&#x2026;? 你……的表现如何？</h4>
+<div class="outline-text-4" id="text-orgbbb9f32">
+<p>
+How did you do on your test? 你这次考试的结果如何？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb1a7976" class="outline-4">
+<h4 id="orgb1a7976">42. Do you think&#x2026;? 你认为……?</h4>
+<div class="outline-text-4" id="text-orgb1a7976">
+<p>
+Do you think you can come? 你认为你能来吗？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5a1012c" class="outline-4">
+<h4 id="org5a1012c">43. How was&#x2026;? ……还好吧？</h4>
+<div class="outline-text-4" id="text-org5a1012c">
+<p>
+How was your weekend? 你周末过得怎么样？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfa6e5ad" class="outline-4">
+<h4 id="orgfa6e5ad">44. Here&#x2026; 在这里，这是……</h4>
+<div class="outline-text-4" id="text-orgfa6e5ad">
+<p>
+Here is my card. 这是我的名片。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5097f56" class="outline-4">
+<h4 id="org5097f56">45. be used to&#x2026; 他习惯于……</h4>
+<div class="outline-text-4" id="text-org5097f56">
+<p>
+He is used to eating out all the time. 他已经习惯了在外面吃饭。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcf3c003" class="outline-4">
+<h4 id="orgcf3c003">46. Have you ever&#x2026;? 你有没有……？</h4>
+<div class="outline-text-4" id="text-orgcf3c003">
+<p>
+Have you ever driven a BMW? 你有没有开过"宝马"？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgedcdcf1" class="outline-4">
+<h4 id="orgedcdcf1">47. How about&#x2026;?……怎么样？</h4>
+<div class="outline-text-4" id="text-orgedcdcf1">
+<p>
+How about if we go tomorrow instead? 我们改成明天去怎么样？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org70dd476" class="outline-4">
+<h4 id="org70dd476">48. How do you like&#x2026;? 你喜欢……吗？</h4>
+<div class="outline-text-4" id="text-org70dd476">
+<p>
+How do you like Hong Kong? 你喜欢香港吗？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2791962" class="outline-4">
+<h4 id="org2791962">49. How do you want&#x2026;? 你要怎么样的……？</h4>
+<div class="outline-text-4" id="text-org2791962">
+<p>
+How do you want your steak? 你的牛排要几分熟？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcc701f4" class="outline-4">
+<h4 id="orgcc701f4">50. How did&#x2026;do&#x2026;? 如何做到……？</h4>
+<div class="outline-text-4" id="text-orgcc701f4">
+<p>
+How did Mary make all of her money? 玛丽所有的钱是怎么赚到的？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgab8a65f" class="outline-4">
+<h4 id="orgab8a65f">51. How did&#x2026;? ……进行得怎么样？</h4>
+<div class="outline-text-4" id="text-orgab8a65f">
+<p>
+How did the game turn out? 球赛结果怎么样？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7d3881e" class="outline-4">
+<h4 id="org7d3881e">52. How was&#x2026;? ……怎么样？</h4>
+<div class="outline-text-4" id="text-org7d3881e">
+<p>
+How was your date? 你的约会怎么样？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org164182c" class="outline-4">
+<h4 id="org164182c">53. How are you doing with&#x2026;? ……做得如何？</h4>
+<div class="outline-text-4" id="text-org164182c">
+<p>
+How are you doing with your new boss? 你跟你的新上司处得如何？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org74f215a" class="outline-4">
+<h4 id="org74f215a">54. How should I&#x2026;? 我该如何……？</h4>
+<div class="outline-text-4" id="text-org74f215a">
+<p>
+How should I tell him the bad news? 我该如何告诉他这个坏消息？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf825bfb" class="outline-4">
+<h4 id="orgf825bfb">55. How much&#x2026;? 多少……？</h4>
+<div class="outline-text-4" id="text-orgf825bfb">
+<p>
+How much money did you make? 你赚了多少钱？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org140df53" class="outline-4">
+<h4 id="org140df53">56. How much does it cost to&#x2026;? ……要多少钱？</h4>
+<div class="outline-text-4" id="text-org140df53">
+<p>
+How much does it cost to go abroad? 出国要多少钱？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7935d7a" class="outline-4">
+<h4 id="org7935d7a">57. How long will it take to&#x2026;? 去……要多久？</h4>
+<div class="outline-text-4" id="text-org7935d7a">
+<p>
+How long wil it take to get to your house? 到你家要多久？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9b33f87" class="outline-4">
+<h4 id="org9b33f87">58. How long have you&#x2026;? 你……多久了？</h4>
+<div class="outline-text-4" id="text-org9b33f87">
+<p>
+How long have you been here? 你在这里多久了？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org39ca478" class="outline-4">
+<h4 id="org39ca478">59. How&#x2026;! 多么……!</h4>
+<div class="outline-text-4" id="text-org39ca478">
+<p>
+How nice/pretty/cold/funny/stupid/boring/interesting!&#x2026;
+</p>
+</div>
+</div>
+
+<div id="outline-container-org54663e3" class="outline-4">
+<h4 id="org54663e3">60. How about&#x2026;? ……如何？……怎么样？</h4>
+<div class="outline-text-4" id="text-org54663e3">
+<p>
+How about going out for dinner? 出去吃晚餐如何？
+</p>
+
+<audio preload="none" style="width: 100%;" controls="controls">
+<source type="audio/mpeg" src="./recording/02_01_sentencePattern_61_80.mp3" />
+</audio><br /><br />
+</div>
+</div>
+
+<div id="outline-container-orge21b56b" class="outline-4">
+<h4 id="orge21b56b">61. I'm sorry&#x2026; 我对……很遗憾难过。</h4>
+<div class="outline-text-4" id="text-orge21b56b">
+<p>
+I'm sorry that you didn't get the job. 很遗憾，你没有得到那份工作。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb6996f2" class="outline-4">
+<h4 id="orgb6996f2">62. I'm afraid&#x2026; 我恐怕……</h4>
+<div class="outline-text-4" id="text-orgb6996f2">
+<p>
+I'm afraid that it's not going to work out. 我恐怕这事不会成的。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1cc5859" class="outline-4">
+<h4 id="org1cc5859">63. I guess&#x2026; 我想……</h4>
+<div class="outline-text-4" id="text-org1cc5859">
+<p>
+I guess I could come over. 我想我能来。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9cdf06c" class="outline-4">
+<h4 id="org9cdf06c">64. Is it okay to&#x2026;? ……可以吗？</h4>
+<div class="outline-text-4" id="text-org9cdf06c">
+<p>
+Is it okay to smoke in the office? 在办公室里抽烟可以吗？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge436eb2" class="outline-4">
+<h4 id="orge436eb2">65. It was kind of&#x2026; 有一点……</h4>
+<div class="outline-text-4" id="text-orge436eb2">
+<p>
+It was kind of exciting. 有一点刺激。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga8f4f63" class="outline-4">
+<h4 id="orga8f4f63">66. I know what&#x2026; 我知道……是什么。</h4>
+<div class="outline-text-4" id="text-orga8f4f63">
+<p>
+I know what you want. 我知道你想要什么。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org851bde4" class="outline-4">
+<h4 id="org851bde4">67. Is that why&#x2026;? 就是这个缘故才导致……吗？</h4>
+<div class="outline-text-4" id="text-org851bde4">
+<p>
+Is that why you don't want to go home? 就是这个缘故，你才不想回家的吗？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb3cd069" class="outline-4">
+<h4 id="orgb3cd069">68. I'm sure&#x2026; 我很肯定……</h4>
+<div class="outline-text-4" id="text-orgb3cd069">
+<p>
+I'm sure we can get you a great/good deal. 我很肯定我们可以帮你做成一笔好交易。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2bb3b12" class="outline-4">
+<h4 id="org2bb3b12">69. help&#x2026;with&#x2026; 帮忙做……</h4>
+<div class="outline-text-4" id="text-org2bb3b12">
+<p>
+Would you help me with the report? 你愿意帮我写报告吗？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd1f7916" class="outline-4">
+<h4 id="orgd1f7916">70. I didn't know&#x2026; 我不知道</h4>
+<div class="outline-text-4" id="text-orgd1f7916">
+<p>
+I didn't know he was the richest person in the world. 我不知道他是全世界最有钱的人。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9f28179" class="outline-4">
+<h4 id="org9f28179">71. I'll have to&#x2026; 我必须……</h4>
+<div class="outline-text-4" id="text-org9f28179">
+<p>
+I'll have to ask my boss/wife first. 我必须先问一下我的老板/老婆。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge36f31b" class="outline-4">
+<h4 id="orge36f31b">72. I take it&#x2026; 这么说来，我认定你是……</h4>
+<div class="outline-text-4" id="text-orge36f31b">
+<p>
+I take it you don't agree. 这么说来，我认为你是不同意。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3dd523e" class="outline-4">
+<h4 id="org3dd523e">73. I tried&#x2026; 我试过……</h4>
+<div class="outline-text-4" id="text-org3dd523e">
+<p>
+I tried losing weight, but nothing worked. 我曾试着减肥，但是毫无效果。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6f8fe74" class="outline-4">
+<h4 id="org6f8fe74">74. It makes no sense to&#x2026; 做……丝毫不可理解</h4>
+<div class="outline-text-4" id="text-org6f8fe74">
+<p>
+It doesn't make any sense to get up so early. 那么早起来，没有任何意义。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org378d953" class="outline-4">
+<h4 id="org378d953">75. It feels like&#x2026; 它感觉上像是……</h4>
+<div class="outline-text-4" id="text-org378d953">
+<p>
+It feels like spring/I've been here before. 感觉好像春天到了/感觉好像我以前来过这里。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org79a3fee" class="outline-4">
+<h4 id="org79a3fee">76. It took&#x2026;表示时间的词&#x2026;to&#x2026; 做某事花了时间</h4>
+<div class="outline-text-4" id="text-org79a3fee">
+<p>
+It took years of hard work to speak good English. 讲一口流利的英语需要多年的刻苦操练。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org58e4c08" class="outline-4">
+<h4 id="org58e4c08">77. I wonder if&#x2026; 我在想是否……</h4>
+<div class="outline-text-4" id="text-org58e4c08">
+<p>
+I wonder if they can make it. 我在想他们是不是能办得到。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge0d63aa" class="outline-4">
+<h4 id="orge0d63aa">78. It's not as&#x2026;as&#x2026; 它不像……一样……</h4>
+<div class="outline-text-4" id="text-orge0d63aa">
+<p>
+It's not as cold/hot as it was yesterday. 今天的天气不像昨天的那么冷/热。
+</p>
+
+<p>
+It's not as easy as you think. 它不像你想象的那么容易。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc1ef1cc" class="outline-4">
+<h4 id="orgc1ef1cc">79. It's not&#x2026;, it's&#x2026; 不是……的问题，而是……</h4>
+<div class="outline-text-4" id="text-orgc1ef1cc">
+<p>
+It's not his work that bothers me it's his attitude. 因扰我的不是他的工作，而是他的态度。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org56f81e5" class="outline-4">
+<h4 id="org56f81e5">80. It sounds&#x2026; 听起来……</h4>
+<div class="outline-text-4" id="text-org56f81e5">
+<p>
+It sounds like you enjoyed it. 听起来你好像蛮喜欢的。
+</p>
+
+<audio preload="none" style="width: 100%;" controls="controls">
+<source type="audio/mpeg" src="./recording/02_01_sentencePattern_81_101.mp3" />
+</audio><br /><br />
+</div>
+</div>
+
+<div id="outline-container-orgc17acdf" class="outline-4">
+<h4 id="orgc17acdf">81. It seems&#x2026; 好像……</h4>
+<div class="outline-text-4" id="text-orgc17acdf">
+<p>
+It seems to me that he would like to go back home. 我觉得他好像想要回家。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga25b36c" class="outline-4">
+<h4 id="orga25b36c">82. It looks&#x2026; 看起来……</h4>
+<div class="outline-text-4" id="text-orga25b36c">
+<p>
+It looks very nice. 看起来很漂亮。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org630116d" class="outline-4">
+<h4 id="org630116d">83. Is everything&#x2026;? 一切都……吗？</h4>
+<div class="outline-text-4" id="text-org630116d">
+<p>
+Is everything under control? 一切都在掌握之中吗？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org30ede46" class="outline-4">
+<h4 id="org30ede46">84. I thought&#x2026; 我以为……</h4>
+<div class="outline-text-4" id="text-org30ede46">
+<p>
+I thought you could do a better job. 我以为你的表现会更好。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org56b0324" class="outline-4">
+<h4 id="org56b0324">85. It's time to&#x2026; 是……的时候了。</h4>
+<div class="outline-text-4" id="text-org56b0324">
+<p>
+It's time for us to say "No" to America. 是我们对美国说“不”的时候了。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgefbe504" class="outline-4">
+<h4 id="orgefbe504">86. It's supposed to&#x2026; 那应当是……</h4>
+<div class="outline-text-4" id="text-orgefbe504">
+<p>
+The show is supposed to be good. 这场表演应当是相当好的。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0a5e69f" class="outline-4">
+<h4 id="org0a5e69f">87. It really depends on&#x2026; 那全看……情况而定。</h4>
+<div class="outline-text-4" id="text-org0a5e69f">
+<p>
+It really depends on who is in charge. 那纯粹要看谁负责了。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8bd638f" class="outline-4">
+<h4 id="org8bd638f">88. It involves a lot of&#x2026; 那要牵涉到很多……</h4>
+<div class="outline-text-4" id="text-org8bd638f">
+<p>
+It involves a lot of hard work. 那需要很多的辛勤工作。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org19d22ea" class="outline-4">
+<h4 id="org19d22ea">89. in&#x2026;favor 对……有利</h4>
+<div class="outline-text-4" id="text-org19d22ea">
+<p>
+That might be in your favor. 那可能对你有利。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7034728" class="outline-4">
+<h4 id="org7034728">90. I didn't realize&#x2026; 我不知道……</h4>
+<div class="outline-text-4" id="text-org7034728">
+<p>
+I didn't realize how much this meant to you. 我不知道这个对你意义有多大。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org28637db" class="outline-4">
+<h4 id="org28637db">91. I didn't mean to&#x2026; 我不是故意……</h4>
+<div class="outline-text-4" id="text-org28637db">
+<p>
+I didn't mean to offend you. 我不是故意冒犯你。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org950527f" class="outline-4">
+<h4 id="org950527f">92. I was wondering if&#x2026; 我想知道……</h4>
+<div class="outline-text-4" id="text-org950527f">
+<p>
+I was wondering if you were doing anything this weekend. 我想知道这个周末你有什么要做。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org318c396" class="outline-4">
+<h4 id="org318c396">93. May I&#x2026;? 我可以……吗？</h4>
+<div class="outline-text-4" id="text-org318c396">
+<p>
+May I have you attention, please? 请大家注意一下。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6e154e3" class="outline-4">
+<h4 id="org6e154e3">94. This is great&#x2026;weather. 这是个……的好天气。</h4>
+<div class="outline-text-4" id="text-org6e154e3">
+<p>
+This is great golfing/swimming/picnic weather. 这是个打高尔夫球/游泳/野餐的好天气。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6fa119f" class="outline-4">
+<h4 id="org6fa119f">95. Thanks for&#x2026; 谢谢你……</h4>
+<div class="outline-text-4" id="text-org6fa119f">
+<p>
+Thanks for taking me to the movie. 谢谢你带我去看电影。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0f8c757" class="outline-4">
+<h4 id="org0f8c757">96. too&#x2026;to&#x2026; 太……以致于不能……</h4>
+<div class="outline-text-4" id="text-org0f8c757">
+<p>
+I am too tired to speak. 我累得说不出话来。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb8131fe" class="outline-4">
+<h4 id="orgb8131fe">97. There is&#x2026; 有……</h4>
+<div class="outline-text-4" id="text-orgb8131fe">
+<p>
+There is a TV show about AIDS on right now. 电视正播映一个有关爱滋病的节目。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org23ad01d" class="outline-4">
+<h4 id="org23ad01d">98. Would you&#x2026;? 你能……</h4>
+<div class="outline-text-4" id="text-org23ad01d">
+<p>
+Whould you tell me your phone number? 你能告诉我你的电话号码吗？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb7468e5" class="outline-4">
+<h4 id="orgb7468e5">99. Where did you&#x2026;? 你从哪里……呢？</h4>
+<div class="outline-text-4" id="text-orgb7468e5">
+<p>
+Where did you learn to speak English? 你从哪里学会说英语的呢？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3885860" class="outline-4">
+<h4 id="org3885860">100. What do you think of&#x2026;? 你认为……如何？</h4>
+<div class="outline-text-4" id="text-org3885860">
+<p>
+What do you think of his new job/this magazine? 你对他的新工作/这本杂志看法如何？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeecb7e1" class="outline-4">
+<h4 id="orgeecb7e1">101. What makes you…? 什么事让你……呢？</h4>
+<div class="outline-text-4" id="text-orgeecb7e1">
+<p>
+What makes you change your mind? 什么事让你改变了主意？你不是说这一次学英语一定要坚持到底吗？！
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdfae349" class="outline-3">
+<h3 id="orgdfae349">第二节：一百个超级短句</h3>
+<div class="outline-text-3" id="text-orgdfae349">
+<p>
+— 来回狂读，溶入血液，脱口而出，一步登天！
+</p>
+<hr />
+
+<div style="padding: 32px">
+<audio preload="none" style="width: 100%;" controls="controls">
+<source type="audio/mpeg" src="./recording/02_02_100superShortSentences.mp3" />
+</audio>
+</div>
+
+<div style="border:1px solid #444444; padding: 7px 20px; width:100%">
+If you learn the following sentences and nothing else you will be able to communicate with no problem! Besides, you can try to teach these sentences to foreigners to help them communicate while they are in China. You will make friends and money. You'll gain valuable experience and a lot of confidence.
+</div><br /><br />
+</div>
+
+<div id="outline-container-orgb024011" class="outline-4">
+<h4 id="orgb024011">1. Absolutely not. 绝对不是。</h4>
+</div>
+<div id="outline-container-orga6412da" class="outline-4">
+<h4 id="orga6412da">2. Are you coming with me? 你跟我一起去吗？</h4>
+</div>
+<div id="outline-container-orgac0e4f6" class="outline-4">
+<h4 id="orgac0e4f6">3. Are you sure? 你能肯定吗？</h4>
+</div>
+<div id="outline-container-org8a041e9" class="outline-4">
+<h4 id="org8a041e9">4. As soon as possible. 尽快。</h4>
+<div class="outline-text-4" id="text-org8a041e9">
+<p>
+A: When does this work need to be finished? 这工作需要什么时候完成？
+</p>
+
+<p>
+B: As soon as possible. 尽快。
+</p>
+</div>
+</div>
+<div id="outline-container-orgeaad2e6" class="outline-4">
+<h4 id="orgeaad2e6">5. Believe me. 相信我。</h4>
+</div>
+<div id="outline-container-orgdf4ac62" class="outline-4">
+<h4 id="orgdf4ac62">6. Buy it! 买下来!</h4>
+</div>
+<div id="outline-container-orga907b26" class="outline-4">
+<h4 id="orga907b26">7. Call me tomorrow. 明天打电话给我。</h4>
+</div>
+<div id="outline-container-orgc5837fd" class="outline-4">
+<h4 id="orgc5837fd">8. Can you speak slowly? 请您说得慢些好吗。</h4>
+</div>
+<div id="outline-container-org8a1c6bd" class="outline-4">
+<h4 id="org8a1c6bd">9. Come with me. 跟我来？</h4>
+</div>
+<div id="outline-container-org25278d4" class="outline-4">
+<h4 id="org25278d4">10. Congratulations! 恭喜恭喜。</h4>
+</div>
+<div id="outline-container-org85be412" class="outline-4">
+<h4 id="org85be412">11. Do it right. 把它做对。</h4>
+</div>
+<div id="outline-container-orgc309217" class="outline-4">
+<h4 id="orgc309217">12. Do you mean it? 你是当真的吗？</h4>
+</div>
+<div id="outline-container-org17d6724" class="outline-4">
+<h4 id="org17d6724">13. Do you see him often? 你经常见到他吗？</h4>
+</div>
+<div id="outline-container-orgf86831b" class="outline-4">
+<h4 id="orgf86831b">14. Do you see it? Do you understand? 你明白了吗？</h4>
+</div>
+<div id="outline-container-orgdf2339a" class="outline-4">
+<h4 id="orgdf2339a">15. Do you want it? 你要吗？</h4>
+</div>
+<div id="outline-container-org83a45fe" class="outline-4">
+<h4 id="org83a45fe">16. Do you want something? 你想要些什么？</h4>
+</div>
+<div id="outline-container-org8a8b27c" class="outline-4">
+<h4 id="org8a8b27c">17. Don't do it. 不要做。</h4>
+</div>
+<div id="outline-container-orgaebeda4" class="outline-4">
+<h4 id="orgaebeda4">18. Don't exaggerate. 不要夸张。</h4>
+</div>
+<div id="outline-container-org3a93529" class="outline-4">
+<h4 id="org3a93529">19. Don't tell me that. 不要告诉我。</h4>
+<div class="outline-text-4" id="text-org3a93529">
+<p>
+A: We have to attend a boring meeting tomorrow. 明天我们要参加一个枯燥的会议。
+</p>
+
+<p>
+B: Don't tell me that. I wanted to relax and go shopping. 不要告诉我，我想轻松一下，上街去购物。
+</p>
+</div>
+</div>
+<div id="outline-container-orgdfd5321" class="outline-4">
+<h4 id="orgdfd5321">20. Give me a hand. 帮我一下。</h4>
+</div>
+<div id="outline-container-orgad08dba" class="outline-4">
+<h4 id="orgad08dba">21. Go right ahead. 一直往前走。</h4>
+</div>
+<div id="outline-container-orgc6c664c" class="outline-4">
+<h4 id="orgc6c664c">22. Have a good trip. 祝旅途愉快。</h4>
+</div>
+<div id="outline-container-org7ba0dc6" class="outline-4">
+<h4 id="org7ba0dc6">23. Have a nice day. 祝你一天过得愉快。</h4>
+</div>
+<div id="outline-container-org42ddd53" class="outline-4">
+<h4 id="org42ddd53">24. Have you finished? 你做完了吗？</h4>
+</div>
+<div id="outline-container-org893855c" class="outline-4">
+<h4 id="org893855c">25. He doesn't have time. 他没空。</h4>
+</div>
+<div id="outline-container-org6a9d5bd" class="outline-4">
+<h4 id="org6a9d5bd">26. He is on his way. 他现在已经在路上了。</h4>
+</div>
+<div id="outline-container-org5db9905" class="outline-4">
+<h4 id="org5db9905">27. How are you doing? 你好吗？</h4>
+</div>
+<div id="outline-container-org93ea98f" class="outline-4">
+<h4 id="org93ea98f">28. How long are you staying? 你要呆多久？</h4>
+</div>
+<div id="outline-container-org5c5f303" class="outline-4">
+<h4 id="org5c5f303">29. I am crazy about her. 我对她着迷了。</h4>
+</div>
+<div id="outline-container-org0ef0573" class="outline-4">
+<h4 id="org0ef0573">30. I am wasting my time. 我在浪费时间。</h4>
+</div>
+<div id="outline-container-orgc6e0a2d" class="outline-4">
+<h4 id="orgc6e0a2d">31. I can do it. 我能做的。</h4>
+</div>
+<div id="outline-container-org427153f" class="outline-4">
+<h4 id="org427153f">32. I can't belive it. 我简直不能相信。</h4>
+<div class="outline-text-4" id="text-org427153f">
+<p>
+A: Stone was thrown into jail last night! 石头昨晚进了监狱。
+</p>
+
+<p>
+B: I can't believe it! He's such a great guy. This news will kill his mother! 我简直不敢相信！他是个多么了不起的人！这消息会让他妈发疯的。
+</p>
+</div>
+</div>
+<div id="outline-container-org3044068" class="outline-4">
+<h4 id="org3044068">33. I can't wait. 我不能再等了。</h4>
+</div>
+<div id="outline-container-org46a83ea" class="outline-4">
+<h4 id="org46a83ea">34. I don't have time. 我没有时间。</h4>
+</div>
+<div id="outline-container-org13db101" class="outline-4">
+<h4 id="org13db101">35. I don't know anybody. 我一个人都不认识。</h4>
+</div>
+<div id="outline-container-org7f26a4b" class="outline-4">
+<h4 id="org7f26a4b">36. I don't like it. 我不喜欢。</h4>
+</div>
+<div id="outline-container-org4f9f281" class="outline-4">
+<h4 id="org4f9f281">37. I don't think so. 我认为不是。</h4>
+</div>
+<div id="outline-container-org718b71e" class="outline-4">
+<h4 id="org718b71e">38. I feel much better. 我感觉好多了。</h4>
+</div>
+<div id="outline-container-orgcb0af04" class="outline-4">
+<h4 id="orgcb0af04">39. I found it. 我找到了。</h4>
+</div>
+<div id="outline-container-orgf79da55" class="outline-4">
+<h4 id="orgf79da55">40. I hope so. 我希望如此。</h4>
+</div>
+<div id="outline-container-org5165295" class="outline-4">
+<h4 id="org5165295">41. I knew it. 我早知道了。</h4>
+</div>
+<div id="outline-container-org7bd5605" class="outline-4">
+<h4 id="org7bd5605">42. I noticed that. 我注意到了。</h4>
+</div>
+<div id="outline-container-org3aaa072" class="outline-4">
+<h4 id="org3aaa072">43. I see. 我明白了。</h4>
+</div>
+<div id="outline-container-org0f9b25f" class="outline-4">
+<h4 id="org0f9b25f">44. I speak English well. 我英语说得很好。</h4>
+</div>
+<div id="outline-container-org613ae47" class="outline-4">
+<h4 id="org613ae47">45. I think so. 我认为是这样的。</h4>
+</div>
+<div id="outline-container-orgb9dfef9" class="outline-4">
+<h4 id="orgb9dfef9">46. I want to speak with him. 我想跟他说话。</h4>
+</div>
+<div id="outline-container-org8106190" class="outline-4">
+<h4 id="org8106190">47. I won. 我赢了。</h4>
+</div>
+<div id="outline-container-orgf12d783" class="outline-4">
+<h4 id="orgf12d783">48. I would like a cup of coffee, please. 请给我一杯咖啡。</h4>
+</div>
+<div id="outline-container-orgf08dd3e" class="outline-4">
+<h4 id="orgf08dd3e">49. I'm hungry. 我饿死了。</h4>
+</div>
+<div id="outline-container-orge763e41" class="outline-4">
+<h4 id="orge763e41">50. I'm leaving. 我要走了。</h4>
+</div>
+<div id="outline-container-org17954da" class="outline-4">
+<h4 id="org17954da">51. I'm sorry. 对不起。</h4>
+</div>
+<div id="outline-container-orgf1a44ca" class="outline-4">
+<h4 id="orgf1a44ca">52. I'm used to it. 我已经习惯了。</h4>
+</div>
+<div id="outline-container-org0d7f541" class="outline-4">
+<h4 id="org0d7f541">53. I'll miss you. 我会想念你的。</h4>
+<div class="outline-text-4" id="text-org0d7f541">
+<p>
+A: I'm leaving for Hong Kong tomorrow. 我明天去香港。
+</p>
+
+<p>
+B: I'll miss you. 我会想你的。
+</p>
+</div>
+</div>
+<div id="outline-container-orga733989" class="outline-4">
+<h4 id="orga733989">54. I'll try. 我试试看。</h4>
+</div>
+<div id="outline-container-orga59d348" class="outline-4">
+<h4 id="orga59d348">55. I'm bored. 我很无聊。</h4>
+</div>
+<div id="outline-container-org5e6394d" class="outline-4">
+<h4 id="org5e6394d">56. I'm busy. 我很忙。</h4>
+</div>
+<div id="outline-container-orgd0ddbbd" class="outline-4">
+<h4 id="orgd0ddbbd">57. I'm having fun. 我玩得很开心。</h4>
+</div>
+<div id="outline-container-orga5abf6c" class="outline-4">
+<h4 id="orga5abf6c">58. I'm ready. 我准备好了。</h4>
+</div>
+<div id="outline-container-org43f9b14" class="outline-4">
+<h4 id="org43f9b14">59. I've got it. 我明白了。</h4>
+</div>
+<div id="outline-container-org5a6b9c7" class="outline-4">
+<h4 id="org5a6b9c7">60. I've had it. 我受够了。</h4>
+</div>
+<div id="outline-container-org60a5a16" class="outline-4">
+<h4 id="org60a5a16">61. It's incredible! 真是难以置信！</h4>
+</div>
+<div id="outline-container-org3fc074f" class="outline-4">
+<h4 id="org3fc074f">62. Is it far? 很远吗？</h4>
+</div>
+<div id="outline-container-org4ce664a" class="outline-4">
+<h4 id="org4ce664a">63. It doesn't matter. 没关系。</h4>
+</div>
+<div id="outline-container-orgb16f3a6" class="outline-4">
+<h4 id="orgb16f3a6">64. It smells good. 闻起来很香。</h4>
+</div>
+<div id="outline-container-orge20dafb" class="outline-4">
+<h4 id="orge20dafb">65. It's about time. 是时候了。</h4>
+</div>
+<div id="outline-container-orge8e416d" class="outline-4">
+<h4 id="orge8e416d">66. It's all right. 没关系。</h4>
+</div>
+<div id="outline-container-org05a492e" class="outline-4">
+<h4 id="org05a492e">67. It's easy. 很容易。</h4>
+</div>
+<div id="outline-container-orgeb53a80" class="outline-4">
+<h4 id="orgeb53a80">68. It's good. 很好。</h4>
+</div>
+<div id="outline-container-org8aa4a49" class="outline-4">
+<h4 id="org8aa4a49">69. It's near here. 离这里很近。</h4>
+</div>
+<div id="outline-container-org79107ee" class="outline-4">
+<h4 id="org79107ee">70. It's nothing. 没什么。</h4>
+</div>
+<div id="outline-container-orgd862955" class="outline-4">
+<h4 id="orgd862955">71. It's time to go. 该走了。</h4>
+</div>
+<div id="outline-container-orgce94457" class="outline-4">
+<h4 id="orgce94457">72. It's different. 那是不同的。</h4>
+</div>
+<div id="outline-container-orga0c9ae7" class="outline-4">
+<h4 id="orga0c9ae7">73. It's funny. 很滑稽。</h4>
+</div>
+<div id="outline-container-orgca5a232" class="outline-4">
+<h4 id="orgca5a232">74. It's impossible. 那是不可能的。</h4>
+</div>
+<div id="outline-container-orgabd4183" class="outline-4">
+<h4 id="orgabd4183">75. It's not bad. 还行。</h4>
+<div class="outline-text-4" id="text-orgabd4183">
+<p>
+A: What do you think about the used car I just bought? 你觉得我刚买的那部旧车如何？
+</p>
+
+<p>
+B: It's not bad. 还行。
+</p>
+</div>
+</div>
+<div id="outline-container-org17a7a56" class="outline-4">
+<h4 id="org17a7a56">76. It's not difficult. 不难。</h4>
+</div>
+<div id="outline-container-org36d60ec" class="outline-4">
+<h4 id="org36d60ec">77. It's not worth it. 不值得。</h4>
+</div>
+<div id="outline-container-orgcef2802" class="outline-4">
+<h4 id="orgcef2802">78. It's obvious. 很明显的。</h4>
+</div>
+<div id="outline-container-org98b1e31" class="outline-4">
+<h4 id="org98b1e31">79. It's the same thing. 还是一样的。</h4>
+</div>
+<div id="outline-container-orgcb69270" class="outline-4">
+<h4 id="orgcb69270">80. It's your turn. 轮到你了。</h4>
+</div>
+<div id="outline-container-orge427998" class="outline-4">
+<h4 id="orge427998">81. Let me know. 告诉我。</h4>
+</div>
+<div id="outline-container-org91a48f7" class="outline-4">
+<h4 id="org91a48f7">82. Let me see. 让我想一想。</h4>
+</div>
+<div id="outline-container-orga1d1006" class="outline-4">
+<h4 id="orga1d1006">83. Me too. 我也一样。</h4>
+</div>
+<div id="outline-container-org12a04ed" class="outline-4">
+<h4 id="org12a04ed">84. Not yet! 还没有！</h4>
+</div>
+<div id="outline-container-orge7a53d7" class="outline-4">
+<h4 id="orge7a53d7">85. Relax! 放松！</h4>
+</div>
+<div id="outline-container-orgf977707" class="outline-4">
+<h4 id="orgf977707">86. See you tomorrow. 明天见。</h4>
+</div>
+<div id="outline-container-org41f4232" class="outline-4">
+<h4 id="org41f4232">87. She is my best friend. 她是我最好的朋友。</h4>
+</div>
+<div id="outline-container-orgbab38f4" class="outline-4">
+<h4 id="orgbab38f4">88. She is so smart. 她真聪明。</h4>
+</div>
+<div id="outline-container-org88cdf8c" class="outline-4">
+<h4 id="org88cdf8c">89. Show me. 指给我看。</h4>
+</div>
+<div id="outline-container-orgc3d1e23" class="outline-4">
+<h4 id="orgc3d1e23">90. Tell me. 告诉我。</h4>
+</div>
+<div id="outline-container-org847f607" class="outline-4">
+<h4 id="org847f607">91. Thank you very much. 多谢。</h4>
+</div>
+<div id="outline-container-org7d436ff" class="outline-4">
+<h4 id="org7d436ff">92. That happens. 这样的事情经常发生。</h4>
+<div class="outline-text-4" id="text-org7d436ff">
+<p>
+A: I can't believe that I called my girlfriend/wife/father the wrong name. 我不敢相信我竟然叫错了女朋友/妻子/父亲的名字。
+</p>
+
+<p>
+B: That happens. 这种事情经常发生。
+</p>
+</div>
+</div>
+<div id="outline-container-org44ad338" class="outline-4">
+<h4 id="org44ad338">93. That's enough. 够了。</h4>
+</div>
+<div id="outline-container-orge68e8f7" class="outline-4">
+<h4 id="orge68e8f7">94. That's interesting. 很有趣。</h4>
+</div>
+<div id="outline-container-orgd6c86d0" class="outline-4">
+<h4 id="orgd6c86d0">95. That's right. 对了。</h4>
+</div>
+<div id="outline-container-org56735be" class="outline-4">
+<h4 id="org56735be">96. That's true. 这是真的。</h4>
+</div>
+<div id="outline-container-org6353025" class="outline-4">
+<h4 id="org6353025">97. There are too many people here. 这里人太多。</h4>
+</div>
+<div id="outline-container-orge7fc25e" class="outline-4">
+<h4 id="orge7fc25e">98. They like each other. 他们互相倾慕。</h4>
+</div>
+<div id="outline-container-org5eff141" class="outline-4">
+<h4 id="org5eff141">99. Think about it. 考虑一下。</h4>
+</div>
+<div id="outline-container-org227e160" class="outline-4">
+<h4 id="org227e160">100. Too bad! 太糟糕啦!</h4>
+</div>
+<div id="outline-container-org352bd75" class="outline-4">
+<h4 id="org352bd75">101. Wait for me. 等等我</h4>
+</div>
+<div id="outline-container-org6338b1a" class="outline-4">
+<h4 id="org6338b1a">102. What did he say? 他说什么？</h4>
+</div>
+<div id="outline-container-orge256c3a" class="outline-4">
+<h4 id="orge256c3a">103. What do you think? 你认为怎样？</h4>
+</div>
+<div id="outline-container-org9001d2f" class="outline-4">
+<h4 id="org9001d2f">104. What is he talking about? 他在说些什么？</h4>
+</div>
+<div id="outline-container-orga1607e6" class="outline-4">
+<h4 id="orga1607e6">105. What terrible weather! 多坏的天气！</h4>
+</div>
+<div id="outline-container-org3af4011" class="outline-4">
+<h4 id="org3af4011">106. What's going on/What's happening/What's the problem? 怎么样啦？</h4>
+</div>
+<div id="outline-container-org2d809f6" class="outline-4">
+<h4 id="org2d809f6">107. What's the date today? 今天几号？</h4>
+</div>
+<div id="outline-container-org5d9339a" class="outline-4">
+<h4 id="org5d9339a">108. Where are you going? 你去哪里？</h4>
+</div>
+<div id="outline-container-orgdfb1564" class="outline-4">
+<h4 id="orgdfb1564">109. Where is he? 他在哪里？</h4>
+</div>
+<div id="outline-container-org4128cdd" class="outline-4">
+<h4 id="org4128cdd">110. You are impatient. 你太性急了。</h4>
+<div class="outline-text-4" id="text-org4128cdd">
+<p>
+A: I don't think my daughter will ever learn to speak English! 我觉得我女儿不可能学会说英语了！
+</p>
+
+<p>
+B: I think you're too impatient. She's only three years old! 你太性急了。她才三岁！
+</p>
+</div>
+</div>
+<div id="outline-container-orgf94c49e" class="outline-4">
+<h4 id="orgf94c49e">111. You look tired. 你看上去很累。</h4>
+</div>
+<div id="outline-container-org177d89b" class="outline-4">
+<h4 id="org177d89b">112. You surprise me. 你让我大吃一惊。</h4>
+</div>
+<div id="outline-container-org56cd3ea" class="outline-4">
+<h4 id="org56cd3ea">113. You're crazy. 你疯了。</h4>
+</div>
+<div id="outline-container-org63cd6df" class="outline-4">
+<h4 id="org63cd6df">114. You're welcome. 别客气</h4>
+</div>
+<div id="outline-container-org0e93b66" class="outline-4">
+<h4 id="org0e93b66">115. You're always right. 你总是对的。</h4>
+</div>
+<div id="outline-container-org0696bdd" class="outline-4">
+<h4 id="org0696bdd">116. You're in a bad mood. 你心情不好。</h4>
+</div>
+<div id="outline-container-orgc7afeea" class="outline-4">
+<h4 id="orgc7afeea">117. You're lying. 你在撒谎。</h4>
+</div>
+<div id="outline-container-orga0434d3" class="outline-4">
+<h4 id="orga0434d3">118. You're wrong. 你错了。</h4>
+</div>
+</div>
+<div id="outline-container-org6f7b18a" class="outline-3">
+<h3 id="org6f7b18a">第三节：一个最疯狂，最典型的美国发音</h3>
+<div class="outline-text-3" id="text-org6f7b18a">
+<p>
+— 50 个句子，让你练得口干舌燥！
+</p>
+<hr />
+
+<div style="padding: 32px">
+<audio preload="none" style="width: 100%;" controls="controls">
+<source type="audio/mpeg" src="./recording/02_03_exaggerate_1.mp3" />
+</audio>
+</div><br />
+
+<strong>Greatest Sentences Ever to Practice [æ] Sound</strong>
+<br /><br />
+</div>
+
+<div id="outline-container-org2d099a0" class="outline-4">
+<h4 id="org2d099a0">1. If you exaggerate, you will sound fantastically American! 如果将发音夸大一些，你听起来会美国味十足！</h4>
+</div>
+<div id="outline-container-org0424e45" class="outline-4">
+<h4 id="org0424e45">2. 👇</h4>
+<div class="outline-text-4" id="text-org0424e45">
+<p>
+A: My exam was a disaster. 我的考试简直是一塌糊涂。
+</p>
+
+<p>
+B: You didn't pass? That's too bad. You'll have another chance. 你没有通过吗？太遗憾了。你会有另外一个机会的。
+</p>
+
+<p>
+A: No. That was my last chance. 不，那是我最后一次机会。
+</p>
+</div>
+</div>
+<div id="outline-container-org2b185fa" class="outline-4">
+<h4 id="org2b185fa">3. That's a fact. 那是事实。</h4>
+</div>
+<div id="outline-container-org2621037" class="outline-4">
+<h4 id="org2621037">4. Saturday I am planning to go dancing. 星期六我计划去跳舞。</h4>
+</div>
+<div id="outline-container-orgbacbe93" class="outline-4">
+<h4 id="orgbacbe93">5. I am happy/glad to have you back from Japan. 我很高兴你从日本回来。</h4>
+</div>
+<div id="outline-container-org6e25c30" class="outline-4">
+<h4 id="org6e25c30">6. That man/actor had a bad accent and bad grammar. 那个男人/演员口音很糟糕，且语法错误很多。</h4>
+</div>
+<div id="outline-container-org18a9cbb" class="outline-4">
+<h4 id="org18a9cbb">7. 👇</h4>
+<div class="outline-text-4" id="text-org18a9cbb">
+<p>
+There was a bad traffic accident. 发生了一起糟糕的交通事故。
+</p>
+
+<p>
+That hacker ran into the back of my van and killed my cat. 出租车撞到了我面包车的后背，撞死了我的猫。
+</p>
+
+<p>
+Too bad it wasn't my wife because I loved my cat. 太遗憾了，死的不是我太太，因为我爱我的猫。
+</p>
+</div>
+</div>
+<div id="outline-container-orgd15898a" class="outline-4">
+<h4 id="orgd15898a">8. Don't laugh behind other people's back. 不要在背后取笑别人。</h4>
+</div>
+<div id="outline-container-org49b7b46" class="outline-4">
+<h4 id="org49b7b46">9. Come back after you finish your math exam. 完成数学测验之后回来。</h4>
+</div>
+<div id="outline-container-orgc78c71c" class="outline-4">
+<h4 id="orgc78c71c">10. My grandfather was a bad man, and he treated my grandmother very badly. 我的祖父是个坏人，他对祖母非常不好。</h4>
+</div>
+<div id="outline-container-org94224a9" class="outline-4">
+<h4 id="org94224a9">11. I'm so glad that nothing bad has happened. 我很高兴没发生什么糟糕的事情。</h4>
+</div>
+<div id="outline-container-org0b9d979" class="outline-4">
+<h4 id="org0b9d979">12. As a matter of fact, I think he is an asshole『讨厌的人；肛门；屁眼儿』. 事实上，我认为他是个混蛋。</h4>
+</div>
+<div id="outline-container-org1feaff9" class="outline-4">
+<h4 id="org1feaff9">13. Look at that fat ass on that fat man. 看看那个胖子的屁股多大。</h4>
+</div>
+<div id="outline-container-org6150c54" class="outline-4">
+<h4 id="org6150c54">14. You're not such a had apple/bad egg after all. 你毕竟还不是太坏。</h4>
+</div>
+<div id="outline-container-orgbdfa284" class="outline-4">
+<h4 id="orgbdfa284">15. There's always a bad apple in every class. 每个班都有几粒老鼠屎。</h4>
+</div>
+<div id="outline-container-orgc5a6d1d" class="outline-4">
+<h4 id="orgc5a6d1d">16. Good employees get a pat on the back, while good secretaries get a pat on the ass. 员工表现得好老板会拍拍他的背，而秘书做得好老板则会拍拍她的屁股。</h4>
+</div>
+<div id="outline-container-org55bc7b9" class="outline-4">
+<h4 id="org55bc7b9">17. She deserves a pat on the back. 她应该得到表扬。</h4>
+</div>
+<div id="outline-container-orgd8985f6" class="outline-4">
+<h4 id="orgd8985f6">18. Pats on the back weren't enough, he wanted fast cash. 只有表扬是不够的，他要的是看得见、摸得着的现金。</h4>
+</div>
+<div id="outline-container-org86b69fd" class="outline-4">
+<h4 id="org86b69fd">19. These back-to-back appointments are giving me a heart attack/killing me/affecting my health. 这一连串的约会使得我疲于奔命。</h4>
+</div>
+<div id="outline-container-org6aa4cac" class="outline-4">
+<h4 id="org6aa4cac">20. Back-to-back defeats made him sad. 连续的失败使他很伤心。</h4>
+<div class="outline-text-4" id="text-org6aa4cac">
+<audio preload="none" style="width: 100%;" controls="controls">
+<source type="audio/mpeg" src="./recording/02_03_exaggerate_2.mp3" />
+</audio><br /><br />
+</div>
+</div>
+
+<div id="outline-container-orgf4d57e8" class="outline-4">
+<h4 id="orgf4d57e8">21. Stop picking on me and get off my back. Man! I've had it. 别再对我进行挑剔，别再找我麻烦了。我受够了！</h4>
+</div>
+<div id="outline-container-orgf47efd7" class="outline-4">
+<h4 id="orgf47efd7">22. Get off my back, will ya? I'll do it when I have time. 别罗嗦了，好不好？我有时间就去做。</h4>
+</div>
+<div id="outline-container-org86535fa" class="outline-4">
+<h4 id="org86535fa">23. Get your crap off my bed! 把你那些乱七八糟的东西从我床上搬走。</h4>
+</div>
+<div id="outline-container-orgaf5a558" class="outline-4">
+<h4 id="orgaf5a558">24. Laughter has no foreign accent. 笑声没有外国口音。</h4>
+</div>
+<div id="outline-container-org0464d95" class="outline-4">
+<h4 id="org0464d95">25. Such men are the backbone『骨干；支柱；基础』of the country. 这样的人是国家的栋梁。</h4>
+</div>
+<div id="outline-container-orgb6c2b83" class="outline-4">
+<h4 id="orgb6c2b83">26. Selfishness and unhappiness often go hand in hand. 自私的人通常无幸福可言。</h4>
+</div>
+<div id="outline-container-org1ff777b" class="outline-4">
+<h4 id="org1ff777b">27. He who laughs last laughs best. 谁笑到最后，谁就笑得最好。</h4>
+</div>
+<div id="outline-container-orge50a3f1" class="outline-4">
+<h4 id="orge50a3f1">28. The voters had a backlash against rising gas taxes. 投标人强烈反对增加汽油税。</h4>
+</div>
+<div id="outline-container-org4654761" class="outline-4">
+<h4 id="org4654761">29. A bad black man tried to crash the rally, but my dad called the cops. 一个黑人坏蛋企图要混进我们的聚会，我父亲打电话叫来了警察。</h4>
+</div>
+<div id="outline-container-org57c8227" class="outline-4">
+<h4 id="org57c8227">30. The manager was hired at a handsome salary. 这个经理被高薪聘用。</h4>
+</div>
+<div id="outline-container-orga863077" class="outline-4">
+<h4 id="orga863077">31. We must take action before it is too late. 我们必须及早采取行动。</h4>
+</div>
+<div id="outline-container-orgfd0dd0e" class="outline-4">
+<h4 id="orgfd0dd0e">32. Actions are more important than words. 行动胜似语言。</h4>
+</div>
+<div id="outline-container-org7821cbd" class="outline-4">
+<h4 id="org7821cbd">33. That man is always handing out『给予』unwanted advice. 那个人总是给别人没有用的建议。</h4>
+</div>
+<div id="outline-container-orga79134b" class="outline-4">
+<h4 id="orga79134b">34. We handed in our exams at the last minute of the class. 在下课的最后时刻，我们交了考试卷。</h4>
+</div>
+<div id="outline-container-org27061d8" class="outline-4">
+<h4 id="org27061d8">35. The two brothers worked hand in hand. 两兄弟携手合作。</h4>
+</div>
+<div id="outline-container-org32d9b43" class="outline-4">
+<h4 id="org32d9b43">36. The family went to the graduation at Stanford. 全家人去斯坦福大学参加了毕业典礼。</h4>
+</div>
+<div id="outline-container-org6d47db6" class="outline-4">
+<h4 id="org6d47db6">37. I ran as fast as I could. 我跑得不能再快了。</h4>
+</div>
+<div id="outline-container-org32566a1" class="outline-4">
+<h4 id="org32566a1">38. We had to act fast. 我们不得不尽快行动。</h4>
+</div>
+<div id="outline-container-org836bf11" class="outline-4">
+<h4 id="org836bf11">39. It happened in the past. 它发生在过去。</h4>
+</div>
+<div id="outline-container-orge75ba15" class="outline-4">
+<h4 id="orge75ba15">40. Don't miss your last chance. 不要错过最后的机会。</h4>
+</div>
+<div id="outline-container-org6af2764" class="outline-4">
+<h4 id="org6af2764">41. It is absolutely impossible to cure AIDS. 要治愈艾滋病是绝对不可能的。</h4>
+</div>
+<div id="outline-container-org9c6354e" class="outline-4">
+<h4 id="org9c6354e">42. We will have a fat chance to win the game on Saturday. 我们几乎没有可能赢得星期六的比赛。</h4>
+</div>
+<div id="outline-container-org9ad551b" class="outline-4">
+<h4 id="org9ad551b">43. Casual dress is becoming more and more fashionable. 休闲服装变得越来越流行了。</h4>
+</div>
+<div id="outline-container-org28dae0a" class="outline-4">
+<h4 id="org28dae0a">44. The match won't catch. 这火柴擦不着。</h4>
+</div>
+<div id="outline-container-org0e06ffe" class="outline-4">
+<h4 id="org0e06ffe">45. The dog went after a rabbit but didn't catch it. 狗追兔子，但没有逮住兔子。</h4>
+</div>
+<div id="outline-container-orgb557858" class="outline-4">
+<h4 id="orgb557858">46. The mad dog ran past Dan. 那疯狗从丹身边跑过。</h4>
+</div>
+<div id="outline-container-orgef0bf05" class="outline-4">
+<h4 id="orgef0bf05">47. Alice dashed to the back of the shack『简陋木屋』to stash『 藏匿；存放』the bag. 艾丽斯跑到小木屋后面把包藏起来。</h4>
+</div>
+<div id="outline-container-org16d6689" class="outline-4">
+<h4 id="org16d6689">48. Stan took a rabbit from his magic hat. 斯坦从他的魔术帽里把兔子拿出来。</h4>
+</div>
+<div id="outline-container-org30493cc" class="outline-4">
+<h4 id="org30493cc">49. 👇</h4>
+<div class="outline-text-4" id="text-org30493cc">
+<p>
+A: Damn it. 混蛋。
+</p>
+
+<p>
+B: Watch your mouth! 嘴巴放干净一点。
+</p>
+
+<p>
+A: I learned that bad habit from you. You should have watched your mouth first. 这个坏习惯是你传给我的。你要先注意自己。
+</p>
+
+<div style="border:1px solid #444444; padding: 7px 20px; width:100%">
+<b>nasty</b>: dirty, bad, unpleasant, disgusting, unkind, offensive, bad to deal with or experience.
+</div><br /><br />
+</div>
+</div>
+
+<div id="outline-container-org7fad75a" class="outline-4">
+<h4 id="org7fad75a">1. a nasty mind 卑鄙肮脏的思想</h4>
+</div>
+<div id="outline-container-orga8a178d" class="outline-4">
+<h4 id="orga8a178d">2. nasty language 污秽不堪的语言</h4>
+</div>
+<div id="outline-container-orgf84046d" class="outline-4">
+<h4 id="orgf84046d">3. live a cheap and nasty life 过低贱的生活</h4>
+</div>
+<div id="outline-container-orgc9240b0" class="outline-4">
+<h4 id="orgc9240b0">5. It's a tacky, nasty little movie. 这是一部庸俗下流不值一看的电影。</h4>
+</div>
+<div id="outline-container-org51564a0" class="outline-4">
+<h4 id="org51564a0">6. a nasty smell 难闻的气味</h4>
+</div>
+<div id="outline-container-orgd1ee6a4" class="outline-4">
+<h4 id="orgd1ee6a4">7. a nasty taste 难吃的味道</h4>
+</div>
+<div id="outline-container-orgfda97a8" class="outline-4">
+<h4 id="orgfda97a8">8. cold, wet, nasty weather 寒冷多雨的恶劣天气</h4>
+</div>
+<div id="outline-container-orgc46bf44" class="outline-4">
+<h4 id="orgc46bf44">9. a nasty habit 恶心</h4>
+</div>
+<div id="outline-container-orge341ad2" class="outline-4">
+<h4 id="orge341ad2">10. a nasty temper 臭脾气</h4>
+</div>
+<div id="outline-container-org4752ac4" class="outline-4">
+<h4 id="org4752ac4">11. a nasty attack of cough 一阵剧烈的咳嗽</h4>
+</div>
+<div id="outline-container-orgbaa68f4" class="outline-4">
+<h4 id="orgbaa68f4">12. a nasty accident 严重的事故</h4>
+</div>
+<div id="outline-container-orgcedc405" class="outline-4">
+<h4 id="orgcedc405">13. a nasty look in his eyes 眼露凶光</h4>
+</div>
+<div id="outline-container-orga54c81e" class="outline-4">
+<h4 id="orga54c81e">14. a nasty room 脏乱的房间</h4>
+</div>
+<div id="outline-container-org108f80e" class="outline-4">
+<h4 id="org108f80e">15. a nasty book 下流书</h4>
+</div>
+<div id="outline-container-orgf69937f" class="outline-4">
+<h4 id="orgf69937f">16. say nasty things about sb 恶语中伤某人</h4>
+</div>
+</div>
+<div id="outline-container-orge016210" class="outline-3">
+<h3 id="orge016210">第四节：四星级 五星级 六星级单词全面奉献</h3>
+<div class="outline-text-3" id="text-orge016210">
+<p>
+超级六星级动词
+</p>
+
+<audio preload="none" style="width: 100%;" controls="controls">
+<source type="audio/mpeg" src="./recording/02_04_456_accomplish.mp3" />
+</audio><br /><br />
+
+<p>
+<b><b>accomplish</b></b>
+</p>
+
+<p>
+to succeed in doing; finish successfully; complete. 做成功；完成；实现；达成
+</p>
+
+<div style="border:1px solid #444444; padding: 7px 20px; width:100%">
+All the following sentences may seem very difficult.<br />
+That's because "accomplish" is a six-star word and six-star words are only found in challenging sentences!<br />
+With a little hard work and determination you can accomplish your goal of mastering them all.<br />
+</div><br />
+
+<ol class="org-ol">
+<li>They accomplished their mission. 他们完成了使命。</li>
+
+<li>A lazy man can never accomplish anything. 懒惰的人永远一事无成。</li>
+
+<li>We tried to arrange a peace agreement, but accomplished nothing. 我们试图达成和平协议，但毫无成效。</li>
+
+<li>She's accomplished a lot/great deal in the last few weeks. 她在前几个星期里做成了很多事情。</li>
+
+<li>The task of modernization will not be accomplished in one generation. 现代化的任务不是一代人所能完成的。</li>
+
+<li>How did they accomplish so much so quickly? 他们何以能如此迅速地取得这么巨大的成就？</li>
+
+<li>I don't think our President's visit to Japan really accomplished anything. 我认为我们总统访日并未取得什么真正成效。</li>
+
+<li>Crazy English is the best method to accomplish your goal of conquering English. 疯狂英语是实现征服英语这一目标的最好方法。</li>
+
+<li>We can absolutely accomplish whatever you can with better and quicker results. 你们能做到的事情，我们也能做到，而且会做得更快更好。</li>
+
+<li>We need capable and experienced hands, ideas just don't accomplish themselves. 我们需要有能力和经验的老手，只有想法并不能成事。</li>
+
+<li>Frankly speaking, I don't see what you can possibly accomplish here. 坦率地说，我看不出你在这儿能干出什么来。</li>
+
+<li>All this work was accomplished in a week. 所有这些工作都是在一个星期内完成的。</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org0dbe5e9" class="outline-3">
+<h3 id="org0dbe5e9">第五节：语法大战</h3>
+<div class="outline-text-3" id="text-org0dbe5e9">
+<p>
+— 两篇文章让你吃透两条语法
+</p>
+<hr />
+
+<audio preload="none" style="width: 100%;" controls="controls">
+<source type="audio/mpeg" src="./recording/02_05_grammar.mp3" />
+</audio><br /><br />
+
+<p>
+<b><b>第 1 篇：巨大的进步</b></b>
+</p>
+
+<p>
+<b><b>A Big Improvement</b></b>
+</p>
+
+<p>
+Paul recently completed/finished a Crazy English class, and he's very proud of
+the results.
+</p>
+
+<p>
+保罗最近结束了疯狂英语的课程，他为自己的成绩感到骄傲。
+</p>
+
+<p>
+His family has noticed that he's speaking English more loudly, more clearly,
+more fluently and more confidently than ever before.
+</p>
+
+<p>
+他的家人发现他在说英语时，比以往更大声，更清楚，更流利，而且更加自信。
+</p>
+
+<p>
+His boss has noticed that he's more effective and successful in his work.
+</p>
+
+<p>
+他的老板发觉他在工作中更有效率和更成功了。
+</p>
+
+<p>
+All his friends tell him that he's friendlier, less shy and more outgoing than
+before.
+</p>
+
+<p>
+他所有的朋友都告诉他他变的比以前更友好，更直爽，胆子也大了。
+</p>
+
+<p>
+And Paul himself has noticed that he's more comfortable and relaxed when he
+speaks in front of people. and he's even enjoying himself more at parties.
+</p>
+
+<p>
+保罗自己也发现他在众人面前说英语时，愈加轻松自如。甚至在派对上也玩得更开心。
+</p>
+
+<p>
+Paul is feeling much better about himself these days. That's why he's now
+recommending Crazy English to everybody he knows.
+</p>
+
+<p>
+保罗这些天自我感觉很好。这就是他现在向所有认识的人推荐“疯狂英语”的原因。
+</p>
+
+<p>
+Feeling good about yourself is the key to a happier and more productive life.
+</p>
+
+<p>
+自我感觉良好是拥有快乐和更有成绩感的生活的关键。
+</p>
+
+<p>
+Being a good English speaker will definitely make you feel good about yourself.
+</p>
+
+<p>
+作为一个口语流利者你一定会有一种全新的感觉。
+</p>
+
+<p>
+<b><b>第 2 篇：辛劳的回报</b></b>
+</p>
+
+<p>
+<b><b>Hard Work Pays Off</b></b>
+</p>
+
+<p>
+2000 was a great year for Donna.
+2000 年对唐娜来说真是太幸运了。
+</p>
+
+<p>
+In January she was hired by the Stone-Cliz International English Promotion Company as a personal assistant.
+</p>
+
+<p>
+她一月份被 Stone-Cliz 国际英语推广公司聘为私人助理。
+</p>
+
+<p>
+In Marych she was sent to school by the company to study information management.
+</p>
+
+<p>
+三月份，公司派她去学习信息管理。
+</p>
+
+<p>
+In April she was given a raise.
+</p>
+
+<p>
+四月，获得了一次加薪。
+</p>
+
+<p>
+Just one month later, she was promoted to the position of supervisor of her
+department.
+</p>
+
+<p>
+就在一个月以后，她又被提升为所在部门的主管。
+</p>
+
+<p>
+In July she was chosen "Employee of the Month".
+</p>
+
+<p>
+七月份，她被评选为“本月最佳员工”。
+</p>
+
+<p>
+In September she was given another raise.
+</p>
+
+<p>
+九月，她再一次得到了加薪。
+</p>
+
+<p>
+In October she was invited to apply for a position in the company's overseas
+office in New York.
+</p>
+
+<p>
+在十月她获得一次机会申请公司驻纽约的海外办事处的职位。
+</p>
+
+<p>
+And in December she was given the new job and flown to America to begin to work.
+</p>
+
+<p>
+十二月，唐娜获得那份工作，并动身飞往美国走上了她的新的工作岗位。
+</p>
+
+<p>
+Donna certainly has had a very incredible year.
+</p>
+
+<p>
+这对唐娜来说当然是不可思议的一年。
+</p>
+
+<p>
+She can't believe all the amazing things that have happened to her since she was
+hired just one year ago.
+</p>
+
+<p>
+她不敢相信自己遇到那么多幸运的事情她才被聘用一年。
+</p>
+
+<p>
+You see, hard work and devotion paid off for Donna.
+</p>
+
+<p>
+你瞧，全身心投入工作换来了唐娜的的成就。
+</p>
+
+<p>
+She knows the golden rule "you must give to receive".
+</p>
+
+<p>
+她深知为人的黄金准则，那就是“有付出才有收获”。
+</p>
+
+<p>
+She gave one hundred percent effort to her job and reached unbelievable success!
+</p>
+
+<p>
+她对工作付出了百分之百的努力，也取得了令人难以置信的成功。
+</p>
+</div>
+</div>
+<div id="outline-container-org0486060" class="outline-3">
+<h3 id="org0486060">第六节：三最短文</h3>
+<div class="outline-text-3" id="text-org0486060">
+<p>
+— 江泽民主席接受美国《新闻周刊》采访
+</p>
+<hr />
+
+<audio preload="none" style="width: 100%;" controls="controls">
+<source type="audio/mpeg" src="./recording/02_06_3_ly.mp3" />
+</audio><br /><br />
+
+<p>
+Q: What impressed you during your U.S. visit? 此次美国之行有什么令您印象深刻？
+</p>
+
+<p>
+A: What impressed me most was that wherever I went, I was received in a very
+friendly manner by the American people.
+</p>
+
+<p>
+令我印象最深的是，无论走到哪里，我都得了美国人民非常友好的接待。
+</p>
+
+<p>
+And I was given a very warm reception by the U.S. government, and the various
+non-governmental organizations.
+</p>
+
+<p>
+美国政府给予我极其热情的接待，和各种非政府组织给予热情的款待。
+</p>
+
+<p>
+And I was able to have very sincere and candid conversations with people from
+various walks of life including government officials.
+</p>
+
+<p>
+同时还有机会进行既真诚又坦率的谈话，包括政府官员在内的各界人士。
+</p>
+
+<p>
+And these exchanges of views have proven very helpful in promoting mutual
+understanding between the two sides.
+</p>
+
+<p>
+所有这些观点的交流已经证实是非常有助于促进两国之间的相互了解。
+</p>
+</div>
+</div>
+<div id="outline-container-orgba81efe" class="outline-3">
+<h3 id="orgba81efe">第七节：生活实际问题</h3>
+<div class="outline-text-3" id="text-orgba81efe">
+<p>
+— 单相思，我该怎么办？（unrequited love 单恋）
+</p>
+<hr />
+
+<audio preload="none" style="width: 100%;" controls="controls">
+<source type="audio/mpeg" src="./recording/02_07_unrequited_love.mp3" />
+</audio><br /><br />
+
+<p>
+Dear Miss Know-it-all
+</p>
+
+<p>
+亲爱的万事通先生
+</p>
+
+<p>
+In 1997, when I was finishing college, I met a beautiful girl and we became good
+friends.
+</p>
+
+<p>
+在我 1997 年大学毕业之际，我遇上了一位漂亮的女孩并成为了好朋友。
+</p>
+
+<p>
+After graduation we kept in touch through letters
+</p>
+
+<p>
+毕业后，我们一直保持着书信来往。
+</p>
+
+<p>
+Gradually I found I was in love with her.
+</p>
+
+<p>
+渐渐地，我发觉我爱上了她。
+</p>
+
+<p>
+As a result, I refused the advances of another woman I knew in my office, and at
+that point, I realized I should make my feelings known to the woman I loved.
+</p>
+
+<p>
+结果，我拒绝了办公室一位女孩的求爱，与此同时，我认识到应该让我所爱的人知道我的感情。
+</p>
+
+<p>
+I wrote a letter to her expressing my love. She responded right away.
+</p>
+
+<p>
+于是，我写了一封信向她表达我的爱意。她很快就给我回信了。
+</p>
+
+<p>
+To my great disappointment, she refused my love, saying she had always thought
+of me as her big brother, and that she just enjoyed exchanging ideas and
+thoughts with me.
+</p>
+
+<p>
+让我失望至极的是，她拒绝了我。她说，她一直都把我当成是大哥哥，只是喜欢与我交流思想而已。
+</p>
+
+<p>
+I am in so much pain now and don't know what to do.
+</p>
+
+<p>
+我现在伤心极了，不知道如何是好。
+</p>
+
+<p>
+Should I continue to keep in touch with her or forget her and disappear from her
+life?
+</p>
+
+<p>
+我应该继续与她联系呢？还是忘记她、从她的视线中消失？
+</p>
+
+<p>
+I hope that I can get some advice from big sister Miss Know-it-all. 我希望万事通大姐能给我一些建议。
+</p>
+
+<hr />
+
+<p>
+Dear Li Yang
+</p>
+
+<p>
+亲爱的李阳
+</p>
+
+<p>
+On a pain scale of one to ten, unrequited love, or love that is given but not
+returned can be right up there just above an operation or a visit to the
+dentist. It is much worse than both. Medical procedures tend to heal
+quickly. But broken hearts can take years to heal and sometimes never do.
+</p>
+
+<p>
+在大大小小的痛楚中，单相思或没有回报的爱所带来的痛楚和手术或看牙医后的痛相比，前两者更甚于后两者。医疗手段可以很快治愈肉体的创伤，而破碎的心却需要多年才能复原，有时甚至终生也难以愈合。
+</p>
+
+<p>
+Most of us have our first run in/encounter/experience with unrequited love in
+our late teens during high school.
+</p>
+
+<p>
+大多数人都有过十八九岁在学校里时单相思的经历。
+</p>
+
+<p>
+We watch from afar as our truly beloved wanders the halls of the school.
+</p>
+
+<p>
+远远地看着自己所爱的人在学校大礼堂漫步。
+</p>
+
+<p>
+We make every effort to spend as much time with that person as possible.
+</p>
+
+<p>
+想方设法地尽可能与心仪的人呆在一起。
+</p>
+
+<p>
+We also make every effort to be sure that person does not know how in love we
+really are.
+</p>
+
+<p>
+我们也会力图把爱埋在心底，不让对方知道我们是多么的爱她。
+</p>
+
+<p>
+But that is no way to go through life.
+</p>
+
+<p>
+然而，我们总不能就这样度过一生。
+</p>
+
+<p>
+So then comes the inevitable/unavoideble day when we have watched "Titanic" too
+many times or listened to too much Celine Dion, and we get up our courage and go
+to them in a dramatic flurry, and confess our true feelings.
+</p>
+
+<p>
+因此，在那个迟早都要面临的日子里当看了无数次“铁达尼号”和听了无数遍席林迪翁的歌以后，我们终于鼓起勇气在忐忑不安中走向她们，袒露我们的情感。
+</p>
+
+<p>
+A couple of hours later it is all over with, and all we want to do is turn back
+time and go back to admiring them from afar.
+</p>
+
+<p>
+几小时之后，一切都已结束，我们唯一所希望的就是让时光倒流，回到远远地赞赏她们的那个时候。
+</p>
+
+<p>
+We want to go back to the sweet taste of our fantasies, thinking how wonderful
+it will be when we can be together.
+</p>
+
+<p>
+回到我们甜美的梦境中，想着有多么的美妙能与她在一起。
+</p>
+
+<p>
+We want to go back there because rejection leaves a bad taste in our mouths that
+we can never quite get rid of.
+</p>
+
+<p>
+我们想回到从前，只因她的拒绝在我们心中留下的阴影挥之不去。
+</p>
+
+<p>
+My advice to you is let her go. You can't force her to fall in love with you.
+</p>
+
+<p>
+我的建议是由她去。你不可能强迫她爱上你。
+</p>
+
+<p>
+The only thing wrose is begging her to love you.
+</p>
+
+<p>
+更差的是企求她爱你。
+</p>
+
+<p>
+It is difficult for me to even advise you to maintain your good friendship with
+her, because much like being on teeter-totter with someone heavier than
+yourself, things will just never be even/balanced/equal.
+</p>
+
+<p>
+我甚至难以建议你继续保持与她的友谊，因为对我来说这是一件很难的事，这叫你与一个比你重许多的人玩跷跷板没什么区别，结果都是不可能的。
+</p>
+
+<p>
+I hope you feel better and I wish you the best of luck!
+</p>
+
+<p>
+希望我所说的对你有帮助，祝你好运！
+</p>
+
+<p>
+Sincerely,
+Miss Know-it-all
+</p>
+</div>
+</div>
+<div id="outline-container-org5f130f0" class="outline-3">
+<h3 id="org5f130f0">第八节：成语的挑战</h3>
+<div class="outline-text-3" id="text-org5f130f0">
+<p>
+— 英语真正突破和成功的开始
+</p>
+<hr />
+
+<audio preload="none" style="width: 100%;" controls="controls">
+<source type="audio/mpeg" src="./recording/02_08_proverb.mp3" />
+</audio><br /><br />
+
+<p>
+I'm sick and tired of having to support of my brother/husband just because he
+refuses to go out and find a job.
+</p>
+
+<p>
+我已经烦透照顾我弟弟/丈夫了，只因为他不肯出去找工作。
+</p>
+
+<p>
+<b><b>Going Out for the Evening 晚上外出</b></b>
+</p>
+
+<p>
+A: Let's go to the movies. There's a good one playing now.
+</p>
+
+<p>
+去看电影吧，有部好片子正在放映。
+</p>
+
+<p>
+B: I'd like to, but I can't. I really have to study. I wasted the whole
+afternoon, I forgot I had to brush up on my English, Then, all of a sudden I
+remembered.
+</p>
+
+<p>
+我想去，但是不行，我要学习。我已经浪费了一个下午，我忘记温习英语了，我突然才想起。
+</p>
+
+<p>
+A: Oh, come on! We'll be home early/before 11.
+</p>
+
+<p>
+噢，走吧！我们会早点儿回家/十一点之前回来。
+</p>
+
+<p>
+B: No, I'd better not. I have a big exam tomorrow. I was about to study when you
+came in. You know how it is, If you don't study, you don't pass. That goes
+without saying.
+</p>
+
+<p>
+不，我不能这样。我明天有一个考试。你进来的时候我正要开始学习呢。你也知道的，如果不准备的话，毫无疑问会通过不了。
+</p>
+
+<p>
+A: Exam? Tomorrow? Oh-oh!
+</p>
+
+<p>
+考试？明天？噢噢！
+</p>
+
+<p>
+B: What's the matter/What's wrong?
+</p>
+
+<p>
+怎么啦？
+</p>
+
+<p>
+A: I just remembered. I have a test, too!
+</p>
+
+<p>
+我刚记起我明天也有考试!
+</p>
+
+<p>
+B: We can go to the movies some other time.
+</p>
+
+<p>
+我们可以下次去看电影嘛。
+</p>
+
+<hr />
+</div>
+
+<div id="outline-container-org61d573b" class="outline-4">
+<h4 id="org61d573b">第一笔财富：</h4>
+<div class="outline-text-4" id="text-org61d573b">
+<p>
+brush up on something: review something to make it fresh again in one's mind.
+</p>
+
+<p>
+提高；改进；重温；再练
+</p>
+</div>
+
+<div id="outline-container-org032d41b" class="outline-5">
+<h5 id="org032d41b">They came here to brush up on technology.</h5>
+<div class="outline-text-5" id="text-org032d41b">
+<p>
+他们来此以求提高技术。
+</p>
+</div>
+</div>
+<div id="outline-container-org8a72413" class="outline-5">
+<h5 id="org8a72413">I really need to brush up on my English.</h5>
+<div class="outline-text-5" id="text-org8a72413">
+<p>
+我确实需要提高我的英语水平。
+</p>
+</div>
+</div>
+<div id="outline-container-org0e8a325" class="outline-5">
+<h5 id="org0e8a325">I'm going to give a speech tomorrow, so I have to brush up on my notes.</h5>
+<div class="outline-text-5" id="text-org0e8a325">
+<p>
+明天我要进行一场演讲，因此，我必须整理一下我的笔记。
+</p>
+</div>
+</div>
+<div id="outline-container-org11d7aca" class="outline-5">
+<h5 id="org11d7aca">Professor Wang had not given a talk on management for a long time, so he had to brush up on some of the new ideas.</h5>
+<div class="outline-text-5" id="text-org11d7aca">
+<p>
+王教授很久没有讲授管理方面的课程了，他必须学习研究一下一些新的发展。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org42eb194" class="outline-4">
+<h4 id="org42eb194">第二笔财富：</h4>
+<div class="outline-text-4" id="text-org42eb194">
+<p>
+all of a sudden: something happening quickly; without advance warning.
+</p>
+
+<p>
+（口语）突然；忽然；出其不意地；冷不防
+</p>
+</div>
+
+<div id="outline-container-org321fe11" class="outline-5">
+<h5 id="org321fe11">Lisa looked very sad, but then, all of a sudden, she began to laugh.</h5>
+<div class="outline-text-5" id="text-org321fe11">
+<p>
+丽萨看起来很悲伤，但突然她大笑起来。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org58646e9" class="outline-5">
+<h5 id="org58646e9">All of a sudden, she burst into laughter.</h5>
+<div class="outline-text-5" id="text-org58646e9">
+<p>
+她突然大笑起来。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc4c2e57" class="outline-5">
+<h5 id="orgc4c2e57">They were sitting quietly when all of a sudden there was a loud noise.</h5>
+<div class="outline-text-5" id="text-orgc4c2e57">
+<p>
+他们正静静地坐着，突然传来一声巨响。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgce8c02f" class="outline-5">
+<h5 id="orgce8c02f">It started out to be a sunny day. Then, all of a sudden, it became cloudy and began to rain.</h5>
+<div class="outline-text-5" id="text-orgce8c02f">
+<p>
+天本来晴朗，突然变得多云开始下起雨。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb582e27" class="outline-4">
+<h4 id="orgb582e27">第三笔财富：</h4>
+<div class="outline-text-4" id="text-orgb582e27">
+<p>
+had better('d better): should do something; ought to do something.
+</p>
+
+<p>
+最好……；应该……
+</p>
+</div>
+
+<div id="outline-container-orgdac2195" class="outline-5">
+<h5 id="orgdac2195">You had better not go out today.</h5>
+<div class="outline-text-5" id="text-orgdac2195">
+<p>
+今天你最好不要外出。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9def1e2" class="outline-5">
+<h5 id="org9def1e2">I think we'd better discuss it more.</h5>
+<div class="outline-text-5" id="text-org9def1e2">
+<p>
+我认为我们应该进一步讨论这事。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3f72ad3" class="outline-5">
+<h5 id="org3f72ad3">I'd better go now or I'll be late for class.</h5>
+<div class="outline-text-5" id="text-org3f72ad3">
+<p>
+我最好现在就走， 否则我上课就会迟到。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbbc0a25" class="outline-5">
+<h5 id="orgbbc0a25">You'd better take your raincoat because it's supposed to rain today.</h5>
+<div class="outline-text-5" id="text-orgbbc0a25">
+<p>
+你最好带上雨衣，今天能会下雨。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4301897" class="outline-4">
+<h4 id="org4301897">第四笔财富：</h4>
+<div class="outline-text-4" id="text-org4301897">
+<p>
+about to: on the point of doing something.
+</p>
+
+<p>
+刚要；打定主意要。
+</p>
+</div>
+
+<div id="outline-container-org26f8bfa" class="outline-5">
+<h5 id="org26f8bfa">We are just about to leave.</h5>
+<div class="outline-text-5" id="text-org26f8bfa">
+<p>
+我们正准备离开。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org60f21c8" class="outline-5">
+<h5 id="org60f21c8">Cathy was just about to leave when Mr. Lee invited her to stay for dinner.</h5>
+<div class="outline-text-5" id="text-org60f21c8">
+<p>
+凯茜正准备离开的时候，李先生邀请她留下来吃晚饭。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org99401ab" class="outline-5">
+<h5 id="org99401ab">I'm not about to waste my time doing something foolish.</h5>
+<div class="outline-text-5" id="text-org99401ab">
+<p>
+我绝不再浪费时间做愚蠢的事了。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfe1a208" class="outline-5">
+<h5 id="orgfe1a208">Stone was about to leave when the telephone rang.</h5>
+<div class="outline-text-5" id="text-orgfe1a208">
+<p>
+石头正准备离开，电话铃响了。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8b54aba" class="outline-4">
+<h4 id="org8b54aba">第五笔财富：</h4>
+<div class="outline-text-4" id="text-org8b54aba">
+<p>
+goes without saying: something is so obvious that it doesn't have to be
+mentioned.
+</p>
+
+<p>
+不言而喻，不用说。
+</p>
+</div>
+
+<div id="outline-container-orgff42955" class="outline-5">
+<h5 id="orgff42955">It goes without saying that our success depends on diligence.</h5>
+<div class="outline-text-5" id="text-orgff42955">
+<p>
+不用说，我们的成功取决于勤奋。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5445051" class="outline-5">
+<h5 id="org5445051">It goes without saying that children should not play with guns.</h5>
+<div class="outline-text-5" id="text-org5445051">
+<p>
+不用说，小孩不应当玩弄枪枝。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org945df73" class="outline-5">
+<h5 id="org945df73">Mary's an excellent student.</h5>
+<div class="outline-text-5" id="text-org945df73">
+<p>
+玛丽是个优秀的学生。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcadb512" class="outline-5">
+<h5 id="orgcadb512">It goes without saying that her parents are very proud of her.</h5>
+<div class="outline-text-5" id="text-orgcadb512">
+<p>
+不用说，她的父母以她为荣。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf0d05c1" class="outline-5">
+<h5 id="orgf0d05c1">Anne just told me she can't go with us. It goes without saying we're disappointed.</h5>
+<div class="outline-text-5" id="text-orgf0d05c1">
+<p>
+安娜刚告诉我不能和我们一起去了，不用说，我们都很失望。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3812cb6" class="outline-4">
+<h4 id="org3812cb6">第六笔财富：</h4>
+<div class="outline-text-4" id="text-org3812cb6">
+<p>
+What's the matter? ＝ What is wrong?
+</p>
+
+<p>
+怎么啦？出了什么事？
+</p>
+</div>
+
+<div id="outline-container-orgc6c66ca" class="outline-5">
+<h5 id="orgc6c66ca">What's the matter with Kate? She looks angry.</h5>
+<div class="outline-text-5" id="text-orgc6c66ca">
+<p>
+凯特怎么啦？她好像很生气。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0728741" class="outline-5">
+<h5 id="org0728741">What's the matter with this computer?</h5>
+<div class="outline-text-5" id="text-org0728741">
+<p>
+这台计算机出了什么毛病？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org539249b" class="outline-5">
+<h5 id="org539249b">How cold your hands feel! What's the matter with you?</h5>
+<div class="outline-text-5" id="text-org539249b">
+<p>
+你的手怎么这样冰冷！你怎么啦！
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgda14cb5" class="outline-4">
+<h4 id="orgda14cb5">SUBSTITUTION DRILL</h4>
+<div class="outline-text-4" id="text-orgda14cb5">
+</div>
+<div id="outline-container-orgc36a63d" class="outline-5">
+<h5 id="orgc36a63d">1. I have to brush up on my French/English/history/grammar rules/speaking skills.</h5>
+</div>
+<div id="outline-container-org3a70afd" class="outline-5">
+<h5 id="org3a70afd">2. All of a sudden I woke up/I remembered her name/she left the room/it began to rain/Kim started to cry/Stone became angry/Bill began to laugh/Hillary wanted to leave.</h5>
+</div>
+<div id="outline-container-org968881e" class="outline-5">
+<h5 id="org968881e">3. I'd better not go to the movies tonight/tell Lee what happened/eat dinner now/lose those important papers/fail the exam/sell my car/buy that house/give that psycho my phone number.</h5>
+</div>
+<div id="outline-container-org688363c" class="outline-5">
+<h5 id="org688363c">4. I was about to kill myself when it began to rain/study when you came in/go when the phone rang/write her a note when she arrived/eat dinner when Stone called me/take a bath when the doorbell rang.</h5>
+</div>
+<div id="outline-container-org63160ed" class="outline-5">
+<h5 id="org63160ed">5. It goes without saying that we should be on time/time is money/honesty is the best policy/we must study hard/haste makes waste/a penny saved is a penny earned/many hands make light work/you're as old as you feel/education is important/good health is essential.</h5>
+<div class="outline-text-5" id="text-org63160ed">
+<div style="border:1px solid #444444; padding: 7px 20px; width:100%">
+Any proverb can follow the idiom "it goes without saying" because their advice is so well known that it shouldn't need to be repeated.
+</div><br /><br />
+</div>
+</div>
+
+<div id="outline-container-org9227385" class="outline-5">
+<h5 id="org9227385">6. What's the matter? You look angry/tired/upset/bored/pissed off/so happy/so sick/You're trembling/crying/Stone is yelling.</h5>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org5ab1f45" class="outline-2">
+<h2 id="org5ab1f45">第三部：疯狂卖弄篇</h2>
+<div class="outline-text-2" id="text-org5ab1f45">
+</div>
+<div id="outline-container-orgde01723" class="outline-4">
+<h4 id="orgde01723">第一节：大段自我介绍</h4>
+</div>
+<div id="outline-container-orga304a53" class="outline-4">
+<h4 id="orga304a53">第一印象是最重要的！</h4>
+</div>
+<div id="outline-container-org3101628" class="outline-4">
+<h4 id="org3101628">第二节：卖弄你的英语和幽默感</h4>
+</div>
+<div id="outline-container-org8abe44a" class="outline-4">
+<h4 id="org8abe44a">第三节：神奇的中文成语</h4>
+</div>
+<div id="outline-container-org21049a0" class="outline-4">
+<h4 id="org21049a0">外国人会非常崇拜地听你讲解中文成语，因为它们充满了智慧！</h4>
+</div>
+<div id="outline-container-org3d3cd8c" class="outline-4">
+<h4 id="org3d3cd8c">第四节：形容词大战！</h4>
+</div>
+<div id="outline-container-orgfa0cb88" class="outline-4">
+<h4 id="orgfa0cb88">形容优秀、成功人的一百个形容词！出色的英语加上一流的甜言蜜语让你所向披靡</h4>
+</div>
+</div>
+<div id="outline-container-org15a6774" class="outline-2">
+<h2 id="org15a6774">第四部：疯狂实战篇</h2>
+</div>
+<div id="outline-container-orgd469f74" class="outline-2">
+<h2 id="orgd469f74">第五部：疯狂挑战篇</h2>
+</div>
+<div id="outline-container-org4ca9c9d" class="outline-2">
+<h2 id="org4ca9c9d">第六部：特级生活习惯</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">&#20316;&#32773;: LYCE</p>
+</div>
+</body>
 </html>
-
